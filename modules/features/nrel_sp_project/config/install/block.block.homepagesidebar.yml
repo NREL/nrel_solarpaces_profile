@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - nrel_sp_project
+    - system
+  theme:
+    - nrel_solarpaces_theme
+id: homepagesidebar
+theme: nrel_solarpaces_theme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: homepagesidebar
+settings:
+  id: broken
+  label: Homepagesidebar
+  provider: nrel_sp_project
+  label_display: '0'
+  text:
+    value: "<h3>SolarPACES Snapshot</h3>\r\n\r\n<p><a href=\"http://www.solarpaces.org/\">SolarPACES</a>, an international program of the <a href=\"http://www.iea.org/\">International Energy Agency</a>, furthers collaborative development, testing, and marketing of concentrating solar power plants. Activities include testing large-scale systems and developing advanced technologies, components, instrumentation, and analysis techniques.</p>\r\n\r\n<p>Founded in 1977, SolarPACES now has 13 members: Algeria, Australia, Egypt, the European Commission, France, Germany, Israel, Mexico, South Africa, South Korea, Spain, Switzerland, and the United States.</p>\r\n"
+    format: basic_html
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

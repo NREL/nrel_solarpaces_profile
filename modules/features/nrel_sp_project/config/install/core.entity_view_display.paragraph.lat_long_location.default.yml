@@ -1,0 +1,93 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.lat_long_location.field_latitude_degrees
+    - field.field.paragraph.lat_long_location.field_latitude_direction
+    - field.field.paragraph.lat_long_location.field_latitude_minutes
+    - field.field.paragraph.lat_long_location.field_latitude_seconds
+    - field.field.paragraph.lat_long_location.field_longitude_degrees
+    - field.field.paragraph.lat_long_location.field_longitude_direction
+    - field.field.paragraph.lat_long_location.field_longitude_minutes
+    - field.field.paragraph.lat_long_location.field_longitude_seconds
+    - paragraphs.paragraphs_type.lat_long_location
+  module:
+    - options
+id: paragraph.lat_long_location.default
+targetEntityType: paragraph
+bundle: lat_long_location
+mode: default
+content:
+  field_latitude_degrees:
+    weight: 0
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_latitude_direction:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_latitude_minutes:
+    weight: 1
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_latitude_seconds:
+    weight: 2
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_longitude_degrees:
+    weight: 4
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_longitude_direction:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_longitude_minutes:
+    weight: 5
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_longitude_seconds:
+    weight: 6
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden: {  }

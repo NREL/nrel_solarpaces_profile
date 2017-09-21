@@ -1,0 +1,7 @@
+﻿ProjectID,NumberDishes,DishApertureArea,DishApertureAreaUnits,DishManufacturer1,DishModel1,DishDescription1,DishManufacturer2,DishModel2,DishDescription2,DishMirrorManufacturer1,DishMirrorModel1,DishMirrorManufacturer2,DishMirrorModel2,EngineManufacturer1,EngineModel1,EngineType1,EngineManufacturer2,EngineModel2,EngineType2,EngineOperatingTemperature,EngineOperatingTemperatureUnits
+56,30000,NULL,NULL,Stirling Energy Systems (SES),SunCatcher&#8482;,Each SunCatcher produces 25 kilowatts of power.,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+58,60,NULL,,Stirling Energy Systems (SES),SunCatcher™,Each SunCatcher produces 25 kilowatts of power,,,Each SunCatcher produces 25 kilowatts of power,,,,,,,,,,,NULL,
+59,34000,NULL,NULL,Stirling Energy Systems (SES),SunCatcher&#8482;,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+93,28360,NULL,,Tessera Solar,SunCatcher,,,,,,,,,,,,,,,NULL,
+156,34000,NULL,,Stirling Energy Systems (SES),SunCatcher™,,,,,,,,,,,,,,,NULL,
+265,429,35,m²,Infinia Corp,PowerDish™,Each PowerDish™ produces 3.5 kW of power,,,Each PowerDish™ produces 3.5 kW of power,,,,,,,,,,,NULL,

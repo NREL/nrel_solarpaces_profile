@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_receiver_inlet_temperature
+    - node.type.project
+id: node.project.field_receiver_inlet_temperature
+field_name: field_receiver_inlet_temperature
+entity_type: node
+bundle: project
+label: 'Receiver Inlet Temperature'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

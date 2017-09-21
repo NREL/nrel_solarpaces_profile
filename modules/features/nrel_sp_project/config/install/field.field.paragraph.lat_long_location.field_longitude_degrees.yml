@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_longitude_degrees
+    - paragraphs.paragraphs_type.lat_long_location
+id: paragraph.lat_long_location.field_longitude_degrees
+field_name: field_longitude_degrees
+entity_type: paragraph
+bundle: lat_long_location
+label: 'Longitude Degrees'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: °
+field_type: integer

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_mirrors_across_l
+    - node.type.project
+id: node.project.field_number_of_mirrors_across_l
+field_name: field_number_of_mirrors_across_l
+entity_type: node
+bundle: project
+label: '# of Mirrors across Line'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

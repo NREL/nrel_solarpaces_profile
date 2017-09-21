@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_heliostat_drive_manufactur
+    - node.type.project
+id: node.project.field_heliostat_drive_manufactur
+field_name: field_heliostat_drive_manufactur
+entity_type: node
+bundle: project
+label: 'Heliostat Drive Manufacturer'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,34 @@
+uuid: 5aa6a63b-e20c-44f2-a7ee-e98bab4dc0e9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: JL7M5hw5UpU_Vn61yMr_xT238Svjjn018gGdy8rwZR8
+id: project_creator
+label: 'Project creator'
+weight: 8
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access panels in-place editing'
+  - 'access toolbar'
+  - 'administer panelizer node project content'
+  - 'administer panelizer node project layout'
+  - 'change layouts in place editing'
+  - 'create project content'
+  - 'create url aliases'
+  - 'edit own project content'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use needs_review_needs_review transition'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view project revisions'
+  - 'view the administration theme'

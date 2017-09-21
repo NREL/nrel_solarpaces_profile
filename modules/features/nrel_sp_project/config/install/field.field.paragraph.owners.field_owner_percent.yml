@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_owner_percent
+    - paragraphs.paragraphs_type.owners
+id: paragraph.owners.field_owner_percent
+field_name: field_owner_percent
+entity_type: paragraph
+bundle: owners
+label: 'Owner Percent'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

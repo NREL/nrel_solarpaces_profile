@@ -1,0 +1,33 @@
+name: 'NREL SolarPACES Content Type'
+description: 'Provides Project content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - address
+  - block
+  - ctools
+  - ctools_block
+  - datetime
+  - default_content
+  - field
+  - field_group
+  - file
+  - help
+  - image
+  - link
+  - menu_ui
+  - node
+  - options
+  - panelizer
+  - panels
+  - paragraphs
+  - path
+  - radix_layouts
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+  - workbench_moderation
+version: 8.x-1.0
+package: 'Nrel SolarPACES Profile'

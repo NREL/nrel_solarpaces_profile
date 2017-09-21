@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_heliostat_field_area
+    - node.type.project
+id: node.project.field_heliostat_field_area
+field_name: field_heliostat_field_area
+entity_type: node
+bundle: project
+label: 'Heliostat Solar-Field Aperture Area'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

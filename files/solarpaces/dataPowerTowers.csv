@@ -1,0 +1,42 @@
+﻿ProjectID,HeliostatFieldArea,HeliostatFieldAreaUnits,NumberofHeliostats,HeliostatArea,HeliostatAreaUnits,HeliostatManufacturer1,HeliostatModel1,HeliostatDescription1,HeliostatManufacturer2,HeliostatModel2,HeliostatDescription2,TowerHeight,TowerHeightUnits,ReceiverManufacturer1,ReceiverType1,ReceiverManufacturer2,ReceiverType2,PanelHeight,PanelHeightUnits,ReceiverDiameter,ReceiverDiameterUnits,ApertureHeight,ApertureHeightUnits,ApertureWidth,ApertureWidthUnits,ReceiverInletTemperature,ReceiverOutletTemperature,ReceiverOutletTemperatureUnits,ReceiverOutletPressure,ReceiverTemperatureDifference
+38,75000,m²,624,120,m²,Abengoa,Solucar 120,Glass-metal,,,,115,m,,Cavity,,,NULL,,NULL,,NULL,,NULL,m,NULL,250 - 300,,NULL,NULL
+39,150000,m²,1255,120,m²,Abengoa,Solucar 120,Glass-metal,,,,165,m,,Cavity,,,NULL,,NULL,,NULL,,NULL,m,NULL,250 - 300,,NULL,NULL
+40,304750,m²,2650,120,m²,Sener,,Sheet metal stamped facet,,,,140,m,Sener,,,,NULL,,NULL,,NULL,,NULL,,290,565,C,100,275
+55,NULL,NULL,NULL,NULL,NULL,eSolar,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+60,1197148,m²,10347,115.7,m²,,,,,,,640,ft,,External - cylindrical,,,100,ft,NULL,,NULL,,NULL,,550,1050,F,NULL,NULL
+61,1071361,m²,17170,62.4,m²,Pratt Whitney,,,,,,540,ft,Pratt Whitney Rocketdyne,External - cylindrical,,,NULL,,NULL,,NULL,,NULL,,550,1050,F,NULL,NULL
+62,2600000,m²,173500,15,m²,,,Each heliostat consists of two mirrors,,,,459,ft,Riley Power,Solar receiver steam generator,,,NULL,,NULL,,NULL,,NULL,,480,1050,F,NULL,570
+63,27670,m²,24360,1.136,m²,eSolar,,,,,,55,m,Babcock & Wilcox,External,Victory Energy,Dual-cavity receiver & tubular external receiver,NULL,,NULL,,NULL,,NULL,,218,440,C,NULL,222
+64,519107,m&sup2;,456960,1.136,m&sup2;,eSolar,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,218,440,&deg;C,NULL,222
+80,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+81,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+82,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+101,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+102,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+103,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+148,NULL,,NULL,NULL,,eSolar,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+149,519107,m²,456960,1.136,m²,eSolar,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,218,440,,NULL,222
+244,576800,m²,4120,140,m²,Abengoa Solar,,,,,,200,m,,,CMI Solar,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+246,17650,m²,2153,8.2,m²,,,,,,,60,m,Kraftanlagen München,,,,NULL,,NULL,,NULL,,NULL,,NULL,680,C,NULL,NULL
+248,434880,m²,217440,2,m²,,,,,,,80,m,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+253,10000,m²,100,100,m²,Himin Solar,,"64 facets, each facet 1.25x1.25 m2",,,,118,m,Xi’an Jiaotong University,Cavity Receiver (5x5 m),,,NULL,,NULL,,NULL,,NULL,,104,400,C,NULL,NULL
+261,6080,m²,620,9.8,m²,,,,,,,NULL,,Lloyd Energy Systems Pty Ltd,Graphite solar storage receiver,,,NULL,,NULL,,NULL,,NULL,,200,500,C,NULL,NULL
+262,16222,m²,14280,1.136,m²,eSolar,,,,,,46,m,Victory Energy,,,,NULL,,NULL,,NULL,,NULL,,218,440,C,NULL,NULL
+277,1052480,m²,50600,20.8,m²,,,4x5.2 m,,,,250,m,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+3275,1484000,m²,10600,140,m²,,,,,,,243,m,,,,,32,m,19,m,NULL,,NULL,,300,550,C,NULL,NULL
+4284,15000,m²,3500,NULL,,Vast Solar,,Standard Azi/Ele,,,,30,m,Vast Solar,,,,NULL,,NULL,,NULL,,NULL,,270,560,C,NULL,NULL
+4289,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,288,566,C,NULL,NULL
+4293,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+4295,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+4299,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+4301,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+4302,51505,m²,23712,NULL,,eSolar,SCS5,,,,,127,m,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+4303,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+4304,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+4305,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+4306,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+4307,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+5303,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+5304,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+6315,175375,m²,1525,115,m²,,,,,,,138,m,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL
+8315,NULL,,NULL,NULL,,,,,,,,NULL,,,,,,NULL,,NULL,,NULL,,NULL,,NULL,,,NULL,NULL

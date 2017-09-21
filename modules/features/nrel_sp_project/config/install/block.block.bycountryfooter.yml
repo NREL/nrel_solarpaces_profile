@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - nrel_sp_project
+    - system
+  theme:
+    - nrel_solarpaces_theme
+id: bycountryfooter
+theme: nrel_solarpaces_theme
+region: content
+weight: 5
+provider: null
+plugin: bycountryfooter
+settings:
+  id: bycountryfooter
+  label: Bycountryfooter
+  provider: nrel_sp_project
+  label_display: '0'
+  text:
+    value: "<p>You can also access information on CSP projects using <a href=\"/\">other sorting options</a>.</p>\r\n"
+    format: basic_html
+visibility:
+  request_path:
+    id: request_path
+    pages: /concentrating-solar-power-projects-country
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,24 @@
+
+nrel_sp_project.uploadcsv:
+  path: '/importcsv'
+  defaults:
+    _form: '\Drupal\nrel_sp_project\Form\uploadcsv'
+    _title: 'csvimport'
+  requirements:
+    _permission: 'upload project csv'
+
+nrel_sp_project.csvtemplate_export:
+  path: '/importcsv/export-template'
+  defaults:
+    _controller: '\Drupal\nrel_sp_project\Controller\csvtemplate::export'
+    _title: 'exportcsv'
+  requirements:
+    _permission: 'access content'
+
+nrel_sp_project.export_projects_export:
+  path: 'export-projects'
+  defaults:
+    _controller: '\Drupal\nrel_sp_project\Controller\ExportProjects::export'
+    _title: 'export'
+  requirements:
+    _permission: 'access content'

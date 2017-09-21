@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_dishes
+    - node.type.project
+id: node.project.field_number_of_dishes
+field_name: field_number_of_dishes
+entity_type: node
+bundle: project
+label: '# of Dishes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

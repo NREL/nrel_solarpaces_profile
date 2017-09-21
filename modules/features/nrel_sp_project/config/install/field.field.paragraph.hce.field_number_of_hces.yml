@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_number_of_hces
+    - paragraphs.paragraphs_type.hce
+id: paragraph.hce.field_number_of_hces
+field_name: field_number_of_hces
+entity_type: paragraph
+bundle: hce
+label: '# of Heat Collector Elements (HCEs)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

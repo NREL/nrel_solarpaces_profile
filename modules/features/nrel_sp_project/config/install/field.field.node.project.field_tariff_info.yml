@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tariff_info
+    - node.type.project
+id: node.project.field_tariff_info
+field_name: field_tariff_info
+entity_type: node
+bundle: project
+label: 'PPA/Tariff Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

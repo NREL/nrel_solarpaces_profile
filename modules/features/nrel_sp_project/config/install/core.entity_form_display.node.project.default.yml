@@ -1,0 +1,3083 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project.field_address
+    - field.field.node.project.field_address_county
+    - field.field.node.project.field_annual_operations_jobs
+    - field.field.node.project.field_annual_solar_electric_effi
+    - field.field.node.project.field_backup_percent
+    - field.field.node.project.field_backup_type
+    - field.field.node.project.field_break_ground
+    - field.field.node.project.field_capacity_unit
+    - field.field.node.project.field_caption
+    - field.field.node.project.field_collector_description_1
+    - field.field.node.project.field_collector_description_2
+    - field.field.node.project.field_collector_manufacturer_1
+    - field.field.node.project.field_collector_manufacturer_2
+    - field.field.node.project.field_collector_model_1
+    - field.field.node.project.field_collector_model_2
+    - field.field.node.project.field_construction_job_years
+    - field.field.node.project.field_contact
+    - field.field.node.project.field_cooling_method
+    - field.field.node.project.field_cooling_method_description
+    - field.field.node.project.field_cost
+    - field.field.node.project.field_cost_currency
+    - field.field.node.project.field_cost_info_source
+    - field.field.node.project.field_design_point_conditions
+    - field.field.node.project.field_design_point_solar_electri
+    - field.field.node.project.field_developer_s_
+    - field.field.node.project.field_dish_aperture_area
+    - field.field.node.project.field_dish_aperture_area_units
+    - field.field.node.project.field_dish_description_1
+    - field.field.node.project.field_dish_description_2
+    - field.field.node.project.field_dish_drive_manufacturer
+    - field.field.node.project.field_dish_drive_manufacturer_2
+    - field.field.node.project.field_dish_manufacturer_1
+    - field.field.node.project.field_dish_manufacturer_2
+    - field.field.node.project.field_dish_mirror_manufacturer_1
+    - field.field.node.project.field_dish_mirror_manufacturer_2
+    - field.field.node.project.field_dish_mirror_model
+    - field.field.node.project.field_dish_mirror_model_2
+    - field.field.node.project.field_dish_model_1
+    - field.field.node.project.field_dish_model_2
+    - field.field.node.project.field_drive_manufacturer_1
+    - field.field.node.project.field_drive_manufacturer_2
+    - field.field.node.project.field_electricity_generation
+    - field.field.node.project.field_electricity_generation_bas
+    - field.field.node.project.field_electricity_generation_exp
+    - field.field.node.project.field_engine_manufacturer
+    - field.field.node.project.field_engine_manufacturer_2
+    - field.field.node.project.field_engine_model_1
+    - field.field.node.project.field_engine_model_2
+    - field.field.node.project.field_engine_operating_temperatu
+    - field.field.node.project.field_engine_type_1
+    - field.field.node.project.field_engine_type_2
+    - field.field.node.project.field_epc_contractor
+    - field.field.node.project.field_feed_in_tariff
+    - field.field.node.project.field_generation_offtaker_s_
+    - field.field.node.project.field_gross_turbine_capacity
+    - field.field.node.project.field_hces
+    - field.field.node.project.field_heat_transfer_fluid_compan
+    - field.field.node.project.field_heat_transfer_fluid_type
+    - field.field.node.project.field_heliostat_area
+    - field.field.node.project.field_heliostat_area_units
+    - field.field.node.project.field_heliostat_description_1
+    - field.field.node.project.field_heliostat_description_2
+    - field.field.node.project.field_heliostat_drive_man_2
+    - field.field.node.project.field_heliostat_drive_manufactur
+    - field.field.node.project.field_heliostat_field_area
+    - field.field.node.project.field_heliostat_field_area_units
+    - field.field.node.project.field_heliostat_manufacturer
+    - field.field.node.project.field_heliostat_manufacturer_2
+    - field.field.node.project.field_heliostat_model_1
+    - field.field.node.project.field_heliostat_model_2
+    - field.field.node.project.field_incentives
+    - field.field.node.project.field_land_area
+    - field.field.node.project.field_land_area_units
+    - field.field.node.project.field_lat_long_location
+    - field.field.node.project.field_lf_drive_manufacturer
+    - field.field.node.project.field_lf_drive_manufacturer_2
+    - field.field.node.project.field_lfr_mirror_manufacturer_1
+    - field.field.node.project.field_lfr_mirror_manufacturer_2
+    - field.field.node.project.field_lfr_receiver_manufacturer2
+    - field.field.node.project.field_lfr_receiver_manufacturer_
+    - field.field.node.project.field_lfr_receiver_model_2
+    - field.field.node.project.field_lfr_receiver_type_1
+    - field.field.node.project.field_lfr_receiver_type_2
+    - field.field.node.project.field_line_length
+    - field.field.node.project.field_line_length_units
+    - field.field.node.project.field_long_description
+    - field.field.node.project.field_mirror_width
+    - field.field.node.project.field_mirror_width_units
+    - field.field.node.project.field_net_capacity
+    - field.field.node.project.field_number_of_dishes
+    - field.field.node.project.field_number_of_heliostats
+    - field.field.node.project.field_number_of_lines
+    - field.field.node.project.field_number_of_loops
+    - field.field.node.project.field_number_of_mirrors_across_l
+    - field.field.node.project.field_number_of_modules_per_sca
+    - field.field.node.project.field_number_of_scas_per_loop
+    - field.field.node.project.field_number_of_solar_collector_
+    - field.field.node.project.field_operator
+    - field.field.node.project.field_other_turbine_capacity
+    - field.field.node.project.field_outlet_temperature_units
+    - field.field.node.project.field_owners
+    - field.field.node.project.field_panel_height
+    - field.field.node.project.field_panel_height_units
+    - field.field.node.project.field_photo
+    - field.field.node.project.field_photo_credit
+    - field.field.node.project.field_power_cycle_pressure
+    - field.field.node.project.field_power_cycle_pressure_units
+    - field.field.node.project.field_ppa_tariff_date
+    - field.field.node.project.field_production_start_date
+    - field.field.node.project.field_project_type
+    - field.field.node.project.field_receiver_2_length_units
+    - field.field.node.project.field_receiver_diameter
+    - field.field.node.project.field_receiver_diameter_units
+    - field.field.node.project.field_receiver_inlet_temperature
+    - field.field.node.project.field_receiver_length_1
+    - field.field.node.project.field_receiver_length_2
+    - field.field.node.project.field_receiver_length_units
+    - field.field.node.project.field_receiver_manufacturer_1
+    - field.field.node.project.field_receiver_manufacturer_2
+    - field.field.node.project.field_receiver_outlet_temperatur
+    - field.field.node.project.field_receiver_temperature_diffe
+    - field.field.node.project.field_receiver_type_1
+    - field.field.node.project.field_receiver_type_2
+    - field.field.node.project.field_reference_doc
+    - field.field.node.project.field_region
+    - field.field.node.project.field_sca_area
+    - field.field.node.project.field_sca_area_units
+    - field.field.node.project.field_sca_description_1
+    - field.field.node.project.field_sca_description_2
+    - field.field.node.project.field_sca_length
+    - field.field.node.project.field_sca_length_units
+    - field.field.node.project.field_sca_manufacturer_1
+    - field.field.node.project.field_sca_manufacturer_2
+    - field.field.node.project.field_sca_mirror_manufacturer_1
+    - field.field.node.project.field_sca_mirror_manufacturer_2
+    - field.field.node.project.field_sca_mirror_model_1
+    - field.field.node.project.field_sca_mirror_model_2
+    - field.field.node.project.field_sca_model_1
+    - field.field.node.project.field_sca_model_2
+    - field.field.node.project.field_short_name
+    - field.field.node.project.field_site_solar_resource
+    - field.field.node.project.field_site_solar_resource_data_s
+    - field.field.node.project.field_solar_field_aperture_area
+    - field.field.node.project.field_solar_field_aperture_area_
+    - field.field.node.project.field_solar_field_inlet_temperat
+    - field.field.node.project.field_solar_field_outlet_tempera
+    - field.field.node.project.field_solar_field_temperature_di
+    - field.field.node.project.field_solar_field_temperature_un
+    - field.field.node.project.field_status
+    - field.field.node.project.field_status_date
+    - field.field.node.project.field_storage_capacity
+    - field.field.node.project.field_storage_capacity_unit
+    - field.field.node.project.field_storage_description
+    - field.field.node.project.field_storage_type
+    - field.field.node.project.field_tariff_info
+    - field.field.node.project.field_tariff_period
+    - field.field.node.project.field_tariff_rate
+    - field.field.node.project.field_tariff_rate_unit
+    - field.field.node.project.field_technology
+    - field.field.node.project.field_total_loops
+    - field.field.node.project.field_tower_height
+    - field.field.node.project.field_tower_height_units
+    - field.field.node.project.field_turbine_efficiency
+    - field.field.node.project.field_turbine_supplier
+    - field.field.node.project.field_turbine_supplier_country
+    - field.field.node.project.field_turbine_thermodynamic_cycl
+    - field.field.node.project.panelizer
+    - image.style.thumbnail
+    - node.type.project
+  module:
+    - address
+    - datetime
+    - field_group
+    - image
+    - paragraphs
+    - path
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_participants:
+      children:
+        - field_developer_s_
+        - field_owners
+        - field_epc_contractor
+        - field_operator
+        - field_generation_offtaker_s_
+      parent_name: ''
+      weight: 10
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: Participants
+    group_background_details:
+      children:
+        - field_technology
+        - field_status
+        - field_land_area
+        - field_land_area_units
+        - field_site_solar_resource
+        - field_site_solar_resource_data_s
+        - field_electricity_generation
+        - field_electricity_generation_bas
+        - field_electricity_generation_exp
+        - field_break_ground
+        - field_production_start_date
+      parent_name: ''
+      weight: 8
+      format_type: details
+      format_settings:
+        label: Background
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: Background
+    group_power_block:
+      children:
+        - field_gross_turbine_capacity
+        - field_net_capacity
+        - field_capacity_unit
+        - field_other_turbine_capacity
+        - field_turbine_supplier
+        - field_turbine_supplier_country
+        - field_turbine_thermodynamic_cycl
+        - field_power_cycle_pressure
+        - field_power_cycle_pressure_units
+        - field_cooling_method
+        - field_cooling_method_description
+        - field_turbine_efficiency
+        - field_design_point_solar_electri
+        - field_design_point_conditions
+        - field_annual_solar_electric_effi
+        - field_backup_type
+        - field_backup_percent
+      parent_name: ''
+      weight: 17
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: 'Power Block'
+    group_thermal_storage:
+      children:
+        - field_storage_type
+        - field_storage_capacity
+        - field_storage_capacity_unit
+        - field_storage_description
+      parent_name: ''
+      weight: 18
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: 'Thermal Storage'
+    group_solar_field:
+      children:
+        - field_solar_field_aperture_area
+        - field_solar_field_aperture_area_
+        - field_solar_field_inlet_temperat
+        - field_solar_field_outlet_tempera
+        - field_solar_field_temperature_di
+        - field_solar_field_temperature_un
+      parent_name: ''
+      weight: 11
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: 'Solar Field'
+    group_parabolic_trough_systems:
+      children:
+        - field_number_of_solar_collector_
+        - field_number_of_loops
+        - field_number_of_scas_per_loop
+        - field_total_loops
+        - field_sca_area
+        - field_sca_area_units
+        - field_sca_length
+        - field_sca_length_units
+        - field_number_of_modules_per_sca
+        - field_sca_manufacturer_1
+        - field_sca_model_1
+        - field_sca_description_1
+        - field_sca_manufacturer_2
+        - field_sca_model_2
+        - field_sca_description_2
+        - field_drive_manufacturer_1
+        - field_drive_manufacturer_2
+        - field_sca_mirror_manufacturer_1
+        - field_sca_mirror_model_1
+        - field_sca_mirror_manufacturer_2
+        - field_sca_mirror_model_2
+        - field_hces
+      parent_name: ''
+      weight: 12
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: 'Parabolic Trough Systems'
+    group_power_tower:
+      children:
+        - field_heliostat_field_area
+        - field_heliostat_field_area_units
+        - field_number_of_heliostats
+        - field_heliostat_area
+        - field_heliostat_area_units
+        - field_heliostat_manufacturer
+        - field_heliostat_model_1
+        - field_heliostat_description_1
+        - field_heliostat_manufacturer_2
+        - field_heliostat_model_2
+        - field_heliostat_description_2
+        - field_heliostat_drive_manufactur
+        - field_heliostat_drive_man_2
+        - field_tower_height
+        - field_tower_height_units
+        - field_receiver_manufacturer_1
+        - field_receiver_type_1
+        - field_receiver_manufacturer_2
+        - field_receiver_type_2
+        - field_panel_height
+        - field_panel_height_units
+        - field_receiver_diameter
+        - field_receiver_diameter_units
+        - field_receiver_inlet_temperature
+        - field_receiver_outlet_temperatur
+        - field_receiver_temperature_diffe
+        - field_outlet_temperature_units
+      parent_name: ''
+      weight: 13
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: 'Power Tower'
+    group_dish:
+      children:
+        - field_number_of_dishes
+        - field_dish_aperture_area
+        - field_dish_aperture_area_units
+        - field_dish_manufacturer_1
+        - field_dish_model_1
+        - field_dish_description_1
+        - field_dish_manufacturer_2
+        - field_dish_model_2
+        - field_dish_description_2
+        - field_dish_mirror_manufacturer_1
+        - field_dish_mirror_model
+        - field_dish_mirror_manufacturer_2
+        - field_dish_mirror_model_2
+        - field_engine_manufacturer
+        - field_engine_model_1
+        - field_engine_type_1
+        - field_engine_manufacturer_2
+        - field_engine_model_2
+        - field_engine_type_2
+        - field_dish_drive_manufacturer
+        - field_dish_drive_manufacturer_2
+        - field_engine_operating_temperatu
+      parent_name: ''
+      weight: 14
+      format_type: details
+      format_settings:
+        label: Dish/Engine
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: Dish/Engine
+    group_linear_fresnel:
+      children:
+        - field_number_of_lines
+        - field_line_length
+        - field_line_length_units
+        - field_mirror_width
+        - field_mirror_width_units
+        - field_number_of_mirrors_across_l
+        - field_collector_manufacturer_1
+        - field_collector_model_1
+        - field_collector_description_1
+        - field_collector_manufacturer_2
+        - field_collector_model_2
+        - field_collector_description_2
+        - field_lfr_mirror_manufacturer_1
+        - field_lfr_mirror_manufacturer_2
+        - field_lf_drive_manufacturer
+        - field_lf_drive_manufacturer_2
+        - field_lfr_receiver_manufacturer_
+        - field_lfr_receiver_type_1
+        - field_receiver_length_1
+        - field_receiver_length_units
+        - field_lfr_receiver_manufacturer2
+        - field_lfr_receiver_model_2
+        - field_lfr_receiver_type_2
+        - field_receiver_length_2
+        - field_receiver_2_length_units
+      parent_name: ''
+      weight: 15
+      format_type: details
+      format_settings:
+        label: 'Linear Fresnel Reflector Systems'
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: 'Linear Fresnel Reflector Systems'
+    group_photo:
+      children:
+        - field_photo
+        - field_photo_credit
+        - field_caption
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: Photo
+    group_location:
+      children:
+        - field_address
+        - field_address_county
+        - field_region
+        - field_lat_long_location
+      parent_name: ''
+      weight: 6
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: Location
+    group_contacts:
+      children:
+        - field_contact
+        - field_reference_doc
+      parent_name: ''
+      weight: 7
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: Contacts
+    group_cost:
+      children:
+        - field_cost
+        - field_cost_currency
+        - field_cost_info_source
+        - field_construction_job_years
+        - field_annual_operations_jobs
+        - field_ppa_tariff_date
+        - field_feed_in_tariff
+        - field_tariff_rate
+        - field_tariff_rate_unit
+        - field_tariff_period
+        - field_tariff_info
+        - field_project_type
+        - field_incentives
+      parent_name: ''
+      weight: 9
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: Cost
+    group_heat_transfer:
+      children:
+        - field_heat_transfer_fluid_type
+        - field_heat_transfer_fluid_compan
+      parent_name: ''
+      weight: 16
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: false
+      label: 'Heat Transfer'
+id: node.project.default
+targetEntityType: node
+bundle: project
+mode: default
+content:
+  field_address:
+    weight: 19
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_address_county:
+    weight: 20
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_annual_operations_jobs:
+    weight: 42
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_annual_solar_electric_effi:
+    weight: 51
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_backup_percent:
+    weight: 53
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_backup_type:
+    weight: 52
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_break_ground:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_capacity_unit:
+    weight: 38
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_caption:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_collector_description_1:
+    weight: 85
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        9184051a-bb7f-4ea0-b89e-521f5955de75:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_collector_description_2:
+    weight: 88
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        ab8d77ab-9e11-40f0-a987-989fed784cb7:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_collector_manufacturer_1:
+    weight: 83
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        a4f5f33e-842e-4715-9d1b-438e159cb28a:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_collector_manufacturer_2:
+    weight: 86
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        2df2444a-fba2-4a8f-a195-925065c6d2a9:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_collector_model_1:
+    weight: 84
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        484e38e4-5f9c-435b-8bcb-23f585f79efe:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_collector_model_2:
+    weight: 87
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        fe556048-b051-492e-b320-bb60e7630b71:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_construction_job_years:
+    weight: 41
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_contact:
+    type: entity_reference_paragraphs
+    weight: 23
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_contact_company:
+    type: string_textfield
+    weight: 24
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_cooling_method:
+    weight: 46
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_cooling_method_description:
+    weight: 47
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_cost:
+    type: string_textfield
+    weight: 38
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_cost_currency:
+    weight: 39
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cost_info_source:
+    weight: 40
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_design_point_conditions:
+    weight: 50
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_design_point_solar_electri:
+    weight: 49
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_developer_s_:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_dish_aperture_area:
+    weight: 79
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        41f3e06c-69f1-4849-86b6-c3758e738554:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_dish_aperture_area_units:
+    weight: 80
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_dish_description_1:
+    weight: 83
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        02242f3d-c6f2-4f4b-b774-e282cf513b90:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textarea
+    region: content
+  field_dish_description_2:
+    weight: 86
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        1e85def5-2030-476b-b6ef-8322850ba0e4:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_dish_drive_manufacturer:
+    weight: 97
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_dish_drive_manufacturer_2:
+    weight: 98
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_dish_manufacturer_1:
+    weight: 81
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        a02e6b07-c43b-4946-b04a-e8eaa35ba0d7:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_dish_manufacturer_2:
+    weight: 84
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_dish_mirror_manufacturer_1:
+    weight: 87
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        3790ac30-2950-4a30-8db4-9409396ffcb6:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_dish_mirror_manufacturer_2:
+    weight: 89
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        d07a56b6-da50-49ad-8889-896f8d27b690:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_dish_mirror_model:
+    weight: 88
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        39e17b95-96de-4bed-9daf-47336f988ba9:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_dish_mirror_model_2:
+    weight: 90
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        44521c1b-11da-4977-ac35-6623c5f4d4ea:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_dish_model_1:
+    weight: 82
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        6a9151dc-b89c-443a-93c4-0b64cf54b1b4:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_dish_model_2:
+    weight: 85
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        877371fe-68cf-4e4a-a28f-a00209c5b6c3:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_drive_manufacturer_1:
+    weight: 64
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_drive_manufacturer_2:
+    weight: 65
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        7efb4c40-a843-49b9-9d1a-9d897de685f1:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_electricity_generation:
+    type: number
+    weight: 23
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_electricity_generation_bas:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_electricity_generation_exp:
+    weight: 25
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_engine_manufacturer:
+    weight: 91
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        a1013958-8e37-45ca-8790-9d84d4ecd826:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_engine_manufacturer_2:
+    weight: 94
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        507669f5-1983-495e-9e0a-badc2dae48ea:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_engine_model_1:
+    weight: 92
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        30180617-aeba-49d7-956b-f79b8f2b82ca:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_engine_model_2:
+    weight: 95
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        8d522ba5-5f80-4980-a9e3-4ed1278d7a69:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_engine_operating_temperatu:
+    weight: 99
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        3ed542b6-b4d1-4930-ae05-d33aa004fd52:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_engine_type_1:
+    weight: 93
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        3b664649-4852-4a7d-bf39-71eacfc0427b:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_engine_type_2:
+    weight: 96
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        1d9192ce-32df-4cf8-953b-78f5628833e9:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_epc_contractor:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_feed_in_tariff:
+    weight: 44
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_generation_offtaker_s_:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_gross_turbine_capacity:
+    weight: 36
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hces:
+    type: entity_reference_paragraphs
+    weight: 70
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_heat_transfer_fluid_compan:
+    weight: 48
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_heat_transfer_fluid_type:
+    weight: 47
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_heliostat_area:
+    weight: 65
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        febff22d-8d1a-436d-b0a1-d2389c1c03d4:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_heliostat_area_units:
+    weight: 66
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_heliostat_description_1:
+    weight: 69
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        851b3d90-2a15-4ddf-9035-8607ba26daf7:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_heliostat_description_2:
+    weight: 72
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        2703cfd2-c07c-4b55-981b-d7acfa610dd5:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_heliostat_drive_man_2:
+    weight: 74
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_heliostat_drive_manufactur:
+    weight: 73
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_heliostat_field_area:
+    weight: 62
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        4c3019a0-0e39-46e7-a7af-645779b839e3:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: number
+    region: content
+  field_heliostat_field_area_units:
+    weight: 63
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_heliostat_manufacturer:
+    weight: 67
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        adac461e-47f9-4033-946b-84281f16d207:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_heliostat_manufacturer_2:
+    weight: 70
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        8a2485bf-1954-479d-8e3e-68ed84646dad:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_heliostat_model_1:
+    weight: 68
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        4862bb22-2d6b-4a94-94a6-2f2c405b1393:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_heliostat_model_2:
+    weight: 71
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        c9649960-2192-4520-a38d-a24d98d0d051:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_incentives:
+    weight: 50
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_land_area:
+    weight: 19
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_land_area_units:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_lat_long_location:
+    weight: 22
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: lat_long_location
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_lf_drive_manufacturer:
+    weight: 91
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_lf_drive_manufacturer_2:
+    weight: 92
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_lfr_mirror_manufacturer_1:
+    weight: 89
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        ca04fa82-c8e4-4c35-b47c-5f00fe0f0901:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_lfr_mirror_manufacturer_2:
+    weight: 90
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        6cd21a69-0d55-433c-8419-bd8b49b29ca3:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_lfr_receiver_manufacturer2:
+    weight: 97
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        deec7fd2-6923-4e1c-9718-035733656f92:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_lfr_receiver_manufacturer_:
+    weight: 93
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        10504b42-4f98-46cd-9df5-39224f1fa81f:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_lfr_receiver_model_2:
+    weight: 98
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        d8a888ac-537b-4319-9156-6e34087e73d2:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_lfr_receiver_type_1:
+    weight: 94
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        35a192dd-4a84-4924-a315-a234b36aff07:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_lfr_receiver_type_2:
+    weight: 99
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        40f05e51-984e-4da0-96d2-78f90495b9e7:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_line_length:
+    weight: 78
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        d3246075-6792-4a78-8888-fd4800f43084:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_line_length_units:
+    weight: 79
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_long_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_mirror_width:
+    weight: 80
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_mirror_width_units:
+    weight: 81
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_net_capacity:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_number_of_dishes:
+    weight: 78
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        dcfe7396-7f97-474e-bd52-937946cadf06:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: number
+    region: content
+  field_number_of_heliostats:
+    weight: 64
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        97ae3809-435c-47b6-b54f-04daddf26eff:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: number
+    region: content
+  field_number_of_lines:
+    weight: 77
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        52e3572f-9d94-4f26-80ad-86a142332de6:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: number
+    region: content
+  field_number_of_loops:
+    weight: 50
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        081f8986-74aa-46b6-be2a-4a445a116801:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: number
+    region: content
+  field_number_of_mirrors_across_l:
+    weight: 82
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        af0b9499-fd0a-4e5d-bbed-618ccc3c1027:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: number
+    region: content
+  field_number_of_modules_per_sca:
+    weight: 57
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        e25bc93e-86eb-4623-a8b8-eb996d3cd840:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: number
+    region: content
+  field_number_of_scas_per_loop:
+    weight: 51
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        20858965-75b1-4710-9a23-2586a0e1cb41:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: number
+    region: content
+  field_number_of_solar_collector_:
+    type: string_textfield
+    weight: 49
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_operator:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_other_turbine_capacity:
+    weight: 39
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_outlet_temperature_units:
+    weight: 88
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_owners:
+    type: entity_reference_paragraphs
+    weight: 13
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_panel_height:
+    weight: 81
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        df315598-2972-47ce-bbf2-cb8c32773b8d:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_panel_height_units:
+    weight: 82
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_photo:
+    type: image_image
+    weight: 7
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_photo_credit:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_power_cycle_pressure:
+    weight: 43
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_power_cycle_pressure_units:
+    weight: 45
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ppa_tariff_date:
+    weight: 43
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_production_start_date:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_project_type:
+    weight: 49
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_receiver_2_length_units:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_receiver_diameter:
+    weight: 83
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        30c4f207-202c-4c00-98c5-2e75d7900b87:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_receiver_diameter_units:
+    weight: 84
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_receiver_inlet_temperature:
+    weight: 85
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        5509b726-84d5-4511-b4d8-8af88a934a9d:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_receiver_length_1:
+    weight: 95
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        7ef37335-312f-4588-94a2-bf45975b6522:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+        f5781621-d420-46f4-a04f-c686f63df2b5:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_receiver_length_2:
+    weight: 100
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        96c5eb27-536c-4487-9f3b-1d8efd1741b9:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_receiver_length_units:
+    weight: 96
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_receiver_manufacturer_1:
+    weight: 77
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        8cc05184-6b28-4164-a98c-81eea2ef514f:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_receiver_manufacturer_2:
+    weight: 79
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        ebc88998-2d8f-4a00-875d-d237b16cf6fb:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_receiver_outlet_temperatur:
+    weight: 86
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        31692d96-a70a-4a6a-a104-a31c2ccc03cf:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_receiver_temperature_diffe:
+    weight: 87
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        b85e39a4-d743-4cc5-8550-fe777fb75941:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_receiver_type_1:
+    weight: 78
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        c37dcd20-eee9-4b33-ab0a-b798716d4b06:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_receiver_type_2:
+    weight: 80
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        236b2859-7097-4a3d-820d-ec7bd7461722:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_reference_doc:
+    type: entity_reference_paragraphs
+    weight: 104
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_region:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sca_area:
+    weight: 53
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sca_area_units:
+    weight: 54
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_sca_description_1:
+    weight: 60
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        8e060a28-993e-4662-ba3a-bd2ffc8acdd1:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_sca_description_2:
+    weight: 63
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        caff45e5-d05a-494d-b185-0b28c6c7310b:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_sca_length:
+    weight: 55
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sca_length_units:
+    weight: 56
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_sca_manufacturer_1:
+    weight: 58
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        2a084d23-7128-421e-b159-1a52ad9d6375:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_sca_manufacturer_2:
+    weight: 61
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        667a428e-77f1-4a05-bd80-382d9c79ab2f:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_sca_mirror_manufacturer_1:
+    weight: 66
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        d6eb34ca-3579-40c2-864e-733eee62540c:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_sca_mirror_manufacturer_2:
+    weight: 68
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        c4c7b7ab-3ccc-4855-8c9b-b11587df3356:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_sca_mirror_model_1:
+    weight: 67
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        02ad6ce9-f9da-4b04-badd-8e9b68c36831:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_sca_mirror_model_2:
+    weight: 69
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        4f5e2ba3-04dc-46d6-b817-1f0b9a548a17:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_sca_model_1:
+    weight: 59
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        4399cd1c-a732-4a4e-a156-32afff55c942:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_sca_model_2:
+    weight: 62
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        e6674b2a-8cfe-4e76-82b7-159cf9cc4758:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_short_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_site_solar_resource:
+    weight: 21
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_site_solar_resource_data_s:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_solar_field_aperture_area:
+    weight: 17
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_solar_field_aperture_area_:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_solar_field_inlet_temperat:
+    weight: 19
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_solar_field_outlet_tempera:
+    weight: 20
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_solar_field_temperature_di:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_solar_field_temperature_un:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_status:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_status_date:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_storage_capacity:
+    weight: 101
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_storage_capacity_unit:
+    weight: 102
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_storage_description:
+    weight: 103
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_storage_type:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_tariff_info:
+    weight: 48
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_tariff_period:
+    weight: 47
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_tariff_rate:
+    weight: 45
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_tariff_rate_unit:
+    weight: 46
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_technology:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_total_loops:
+    weight: 52
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        a66a616a-a595-467b-970e-701b90bedfea:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: number
+    region: content
+  field_tower_height:
+    weight: 75
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        d17b9051-6f88-4f64-a58a-990b56b8e899:
+          dependee: field_technology
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: project
+    type: string_textfield
+    region: content
+  field_tower_height_units:
+    weight: 76
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_turbine_efficiency:
+    weight: 48
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_turbine_supplier:
+    weight: 40
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_turbine_supplier_country:
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_turbine_thermodynamic_cycl:
+    weight: 42
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  panelizer: true
+  promote: true
+  sticky: true
+  uid: true

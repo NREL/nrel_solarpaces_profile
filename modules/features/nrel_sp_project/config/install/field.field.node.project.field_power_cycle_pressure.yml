@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_power_cycle_pressure
+    - node.type.project
+id: node.project.field_power_cycle_pressure
+field_name: field_power_cycle_pressure
+entity_type: node
+bundle: project
+label: 'Power Cycle Pressure'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

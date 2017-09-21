@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+function nrel_solarpaces_theme_preprocess_html(&$variables) {
+
+  $parameters = \Drupal::routeMatch()->getParameters();
+
+  if($parameters->get('view_id') == 'projects' && $parameters->get('display_id') == 'page_3') {
+    $tid = ($parameters->get('arg_0'));
+    $term = \Drupal\taxonomy\Entity\Term::load($tid);
+    $term_name = $term->getName();
+
+    // Set the page title
+    $variables['head_title']['title'] = $term_name;
+
+  }
+
+}

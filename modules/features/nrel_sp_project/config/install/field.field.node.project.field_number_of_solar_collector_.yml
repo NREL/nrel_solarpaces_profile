@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_solar_collector_
+    - node.type.project
+id: node.project.field_number_of_solar_collector_
+field_name: field_number_of_solar_collector_
+entity_type: node
+bundle: project
+label: '# of Solar Collector Assemblies (SCAs)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_solar_field_aperture_area
+    - node.type.project
+id: node.project.field_solar_field_aperture_area
+field_name: field_solar_field_aperture_area
+entity_type: node
+bundle: project
+label: 'Solar-Field Aperture Area'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_turbine_thermodynamic_cycl
+field_name: field_turbine_thermodynamic_cycl
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Steam Rankine'
+      label: 'Steam Rankine'
+    -
+      value: 'Organic Rankine'
+      label: 'Organic Rankine'
+    -
+      value: Brayton
+      label: Brayton
+    -
+      value: Stirling
+      label: Stirling
+    -
+      value: 'Solar Hybrid'
+      label: 'Solar Hybrid'
+    -
+      value: Other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

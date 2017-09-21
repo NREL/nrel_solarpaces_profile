@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: lat_long_location
+label: 'Lat/Long Location'
+behavior_plugins: {  }

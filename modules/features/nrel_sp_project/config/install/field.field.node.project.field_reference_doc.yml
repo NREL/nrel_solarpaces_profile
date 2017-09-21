@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference_doc
+    - node.type.project
+    - paragraphs.paragraphs_type.reference_document
+  module:
+    - entity_reference_revisions
+id: node.project.field_reference_doc
+field_name: field_reference_doc
+entity_type: node
+bundle: project
+label: 'Key References'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      reference_document: reference_document
+    target_bundles_drag_drop:
+      reference_document:
+        enabled: true
+        weight: 6
+      contact:
+        weight: 7
+        enabled: false
+      hce:
+        weight: 8
+        enabled: false
+      lat_long_location:
+        weight: 9
+        enabled: false
+      owners:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

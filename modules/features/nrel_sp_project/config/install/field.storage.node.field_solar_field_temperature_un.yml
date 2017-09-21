@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_solar_field_temperature_un
+field_name: field_solar_field_temperature_un
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: C
+      label: C
+    -
+      value: F
+      label: F
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,4 @@
+upload project csv:
+  title: 'Upload project CSV'
+  description: 'Upload the project CSV template to create new projects.'
+  restrict access: true

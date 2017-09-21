@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lp_title
+    - taxonomy.vocabulary.technology
+id: taxonomy_term.technology.field_lp_title
+field_name: field_lp_title
+entity_type: taxonomy_term
+bundle: technology
+label: 'LP Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

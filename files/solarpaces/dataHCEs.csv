@@ -1,0 +1,67 @@
+ProjectID,HCEManufacturer,HCEModel,NumberHCEs,HCEType,HCELength,HCELengthTubeUnits
+3,Schott,PTR70,11232,,4,m
+3,Solel,UVAC 2008,11232,,4,m
+4,Schott,PTR70,11232,,4,m
+4,Solel,UVAC 2008,11232,,4,m
+7,Schott,,11232,,4,m
+7,Solel,,11232,,4,m
+8,Schott,,11232,,4,m
+8,Solel,,11232,,4,m
+10,Schott,PTR 70,22464,Evacuated,4,m
+11,Solel,UVAC 2008,22464,Evacuated,4,m
+14,Solel,UVAC 2008,22464,Evacuated,4,m
+17,Solel,,18144,,NULL,
+18,Schott,PTR70,6336,,4,m
+18,Solel,,6,,4,m
+19,Archimede Solar Energy,,1296,,NULL,
+20,Schott/Solel,,18240,,NULL,
+21,Schott,,12960,,NULL,
+22,Schott,,12960,,NULL,
+24,Schott Glass,Schott PTR70,528,Evacuated,4,m
+25,Schott,,12960,,NULL,
+26,Schott,PTR70,24192,,4,m
+27,Schott,,24192,,4,m
+30,Solel Solar Systems,Solel UVAC,NULL,Evacuated,4,m
+31,Solel Solar Systems,Solel UVAC,NULL,Evacuated,4,m
+32,Solel Solar Systems,Solel UVAC,NULL,Evacuated,4,m
+33,Solel Solar Systems,Solel UVAC,NULL,Evacuated,4,m
+34,Solel Solar Systems,Solel UVAC,NULL,Evacuated,4,m
+35,Solel Solar Systems,Solel UVAC,NULL,Evacuated,4,m
+36,Solel Solar Systems,Solel UVAC,NULL,Evacuated,4,m
+43,Schott,PTR70,8064,,NULL,
+44,Schott,PTR 70,8064,,NULL,
+47,Schott,,12960,,NULL,
+48,Schott,,12960,,NULL,
+57,Schott,PTR70,NULL,,NULL,
+65,Schott,PTR 70,NULL,,NULL,
+69,Schott,PTR 70,27648,,NULL,
+207,Schott,,NULL,,NULL,
+210,Schott,,12960,,NULL,
+212,Schott,,12960,,NULL,
+215,Siemens,UVAC 2010,22464,,NULL,
+216,Solel,UVAC Receiver,17280,,NULL,
+217,Siemens,UVAC 2010,22464,,NULL,
+223,Schott,,12960,,NULL,
+224,Schott,,12960,,NULL,
+228,Siemens,UVAC 2010,17712,Evacuated,4,m
+230,Schott,,12960,,NULL,
+231,Schott,,12960,,NULL,
+232,Schott,,12960,,NULL,
+233,Schott,,12960,,NULL,
+234,Schott,PTR70,NULL,,NULL,
+235,Schott,PTR-70,13824,,4,m
+240,Solel,UVAC 2008,22464,Evacuated,4,m
+241,Siemens,UVAC 2010,22464,Evacuated,4,m
+242,Siemens,UVAC 2010,8064,Evacuated,4,m
+245,Schott,PTR70,NULL,Evacuated,4,m
+247,Schott,PTR-70,NULL,Evacuated,4,m
+254,Siemens,UVAC 2010,NULL,,NULL,
+263,Schott,PTR-70,NULL,Evacuated,4,m
+264,Siemens,UVAC 2010,16128,Evacuated,4,m
+267,Solel,UVAC 2008,NULL,,4,m
+271,Schott,PTR 70,NULL,,NULL,26000
+273,Airlight Energy,,108,,NULL,
+274,Solel,UVAC 2008,22464,Evacuated,4,m
+279,Schott,PTR-70,360,,4,m
+4300,Archimede Solar Energy,,NULL,,NULL,
+8316,Aalborg CSP,,1200,,NULL,

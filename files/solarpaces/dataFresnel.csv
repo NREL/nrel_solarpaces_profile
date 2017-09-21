@@ -1,0 +1,18 @@
+﻿ProjectID,NumberLines,SolarFieldAperture,SolarFieldApertureUnits,LineLength,LineLengthUnits,WidthMirrorsInLine,WidthMirrorsUnits,NumberMirrorsAcrossLine,CollectorManufacturer1,CollectorModel1,CollectorDescription1,CollectorManufacturer2,CollectorModel2,CollectorDescription2,LFRMirrorManufacturer1,LFRMirrorModel1,LFRMirrorManufacturer2,LFRMirrorModel2,LFRReceiverManufacturer1,LFRReceiverModel1,LFRReceiverType1,ReceiverLength1,ReceiverLengthUnits1,LFRReceiverManufacturer2,LFRReceiverModel2,LFRReceiverType2,ReceiverLength2,ReceiverLengthUnits2,SolarFieldInletTemperature,SolarFieldOutletTemperature,SolarFieldTemperatureUnits,SolarFieldTemperatureDifference
+37,3,25988,m²,385,m,2,m,10,Ausra,,Compact Linear Fresnel,,,,Ausra,,,,Ausra,,Non-evacuated,385,m,,,,NULL,,NULL,300,C,NULL
+46,2,NULL,m²,806,m,16,m,NULL,Novatec Solar España S.L.,Nova-1,Fresnel,,,,Novatec Solar España S.L.,,,,Novatec Solar España S.L.,,,NULL,m,,,,NULL,m,140,270,C,NULL
+159,28,302000,m²,940,m,16,m,NULL,Novatec Solar España S.L.,Nova-1,Fresnel,,,,Novatec Solar España S.L.,,,,Novatec Solar España S.L.,,,NULL,,,,,NULL,,140,270,C,NULL
+221,21,140000,m²,750,m,NULL,,12,Solar Euromed,AF1,Linear Fresnel Reflectors,,,,Solar Euromed,AF1,,,Solar Euromed,AF1,Non-evacuated,750,m,,,,NULL,,NULL,300,C,NULL
+222,1,400,m²,40,m,NULL,,12,Solar Euromed,AF1,Liner Fresnel Reflectors,,,,Solar Euromed,AF1,,AF1,Solar Euromed,AF1,Non-evacuated,40,m,,,,NULL,,NULL,300,C,NULL
+243,14,NULL,NULL,500,m,36,m,NULL,AREVA Solar,CLFR,Once-through receiver delivering superheated steam,,,,AREVA Solar,,,,AREVA Solar,,,500,m,,,,NULL,,186,370,C,NULL
+266,27,153000,m²,340,m,14,m,NULL,SUNCNIM,,,,,,,,,,,,,NULL,,,,,NULL,,190,285,C,NULL
+268,4,10000,m²,260,m,14,,NULL,CNIM,,,,,,,,,,,,,NULL,,,,,NULL,,160,280,C,NULL
+269,4,18490,m²,403,m,NULL,,NULL,Novatec Solar,Nova-1,Fresnel,,,,Novatec Solar,,,,Novatec Solar,,,NULL,,,,,NULL,,140,270,C,NULL
+272,0,NULL,NULL,NULL,,NULL,,NULL,,,,,,,,,,,,,,NULL,,,,,NULL,,NULL,NULL,,NULL
+4287,0,11400,m²,NULL,,NULL,,NULL,Soltigua,,,,,,,,,,,,,NULL,,,,,NULL,,180,300,C,NULL
+4288,NULL,9780,m²,NULL,,NULL,,NULL,,,,,,,,,,,,,,NULL,,,,,NULL,,NULL,280,C,NULL
+5311,0,NULL,NULL,NULL,,NULL,,NULL,,,,,,,,,,,,,,NULL,,,,,NULL,,NULL,NULL,,NULL
+5312,0,NULL,NULL,NULL,,NULL,,NULL,,,,,,,,,,,,,,NULL,,,,,NULL,,NULL,NULL,,NULL
+5313,0,NULL,NULL,NULL,,NULL,,NULL,,,,,,,,,,,,,,NULL,,,,,NULL,,NULL,NULL,,NULL
+5314,0,NULL,NULL,NULL,,NULL,,NULL,,,,,,,,,,,,,,NULL,,,,,NULL,,NULL,NULL,,NULL
+5315,0,33000,m²,NULL,,NULL,,NULL,,,,,,,,,,,,,,NULL,,,,,NULL,,NULL,250,C,NULL

@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - nrel_sp_project
+    - system
+  theme:
+    - nrel_solarpaces_theme
+id: terminfo
+theme: nrel_solarpaces_theme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: term_info
+settings:
+  id: term_info
+  label: 'Term info'
+  provider: nrel_sp_project
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/by-technology/*'
+    negate: false
+    context_mapping: {  }

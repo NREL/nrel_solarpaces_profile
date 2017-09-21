@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_latitude_direction
+    - paragraphs.paragraphs_type.lat_long_location
+  module:
+    - options
+id: paragraph.lat_long_location.field_latitude_direction
+field_name: field_latitude_direction
+entity_type: paragraph
+bundle: lat_long_location
+label: 'Latitude Direction'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

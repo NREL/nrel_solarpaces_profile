@@ -1,0 +1,166 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/concentrating-solar-power-projects?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 182
+        }
+    ],
+    "uuid": [
+        {
+            "value": "955a817e-4f5d-4c93-9650-b4a50f75b640"
+        }
+    ],
+    "vid": [
+        {
+            "value": 364
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "page"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Concentrating Solar Power Projects",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b876cd08-f2f0-43e9-b97a-4fdff6e729d7"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b876cd08-f2f0-43e9-b97a-4fdff6e729d7"
+                    }
+                ]
+            }
+        ]
+    },
+    "created": [
+        {
+            "value": 1502335387,
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1502339024,
+            "lang": "en"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": 1502339024
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/concentrating-solar-power-projects",
+            "pid": 2,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "target_id": "published",
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Concentrating Solar Power Projects | NREL SolarPaces",
+                "description": "Working with member countries,\u00a0SolarPACES\u2014Solar Power and Chemical Energy Systems\u2014has compiled data on concentrating solar power (CSP) projects around the world that have plants that are either operational, under construction, or under development. CSP technologies include parabolic trough, linear Fresnel reflector, power tower, and dish\/engine systems."
+            }
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Working with member countries,&nbsp;<a href=\"http:\/\/www.solarpaces.org\/\">SolarPACES<\/a>\u2014Solar Power and Chemical Energy Systems\u2014has compiled data on concentrating solar power (CSP) projects around the world that have plants that are either operational, under construction, or under development. CSP technologies include parabolic trough, linear Fresnel reflector, power tower, and dish\/engine systems.<\/p>\r\n\r\n<p>For individual concentrating solar power projects, you will find profiles that include background information, a listing of participants in the project, and data on the power plant configuration.<\/p>\r\n\r\n<p>These pages should help utilities, financiers, manufacturers, and anyone interested in renewable-energy options to find information on the growing number of concentrating solar power projects around the world.<\/p>\r\n\r\n<h2>Browse the Project Profiles<\/h2>\r\n\r\n<p>You can browse project profiles under the following categories:<\/p>\r\n\r\n<ul>\r\n\t<li><a href=\"\/by-country\">Country<\/a>\u2014listing by one of 23 countries<\/li>\r\n\t<li><a href=\"\/projects\">Project name<\/a>\u2014alphabetical listing by full project name<\/li>\r\n\t<li><a href=\"\/by-technology\">Technology<\/a>\u2014listing by parabolic trough, linear Fresnel reflector, power tower, or dish\/engine systems<\/li>\r\n\t<li><a href=\"\/by-status\">Status<\/a>\u2014listing by whether projects have plants that are operational, under construction, under development, request for offer, or currently non-operational.<\/li>\r\n<\/ul>\r\n\r\n<p>You can also&nbsp;<a href=\"\/sites\/default\/files\/project-export.csv\">download<\/a>&nbsp;comma-delimited data on all projects.<\/p>\r\n\r\n<h2>About the Project Profiles<\/h2>\r\n\r\n<p>The&nbsp;<a href=\"https:\/\/www.nrel.gov\/csp\/\">National Renewable Energy Laboratory's CSP Program<\/a>&nbsp;assists SolarPACES in maintaining the projects database behind this Web site. Project operators or developers supply information for the key data fields for their projects. SolarPACES experts then review the information to ensure accuracy and completeness. The material is updated regularly, and because this site is new, we are still expanding the number of projects, especially those that are under development.<\/p>",
+            "format": "basic_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

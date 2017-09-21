@@ -1,0 +1,25 @@
+/**
+ * Panel styling.
+ */
+/* line 4, panel.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/drew\.michael\/projects\/nrel-sp\/docroot\/profiles\/custom\/nrel_solarpaces_profile\/themes\/custom\/nrel_solarpaces_theme\/less\/component\/panel\.less}line{font-family:\000034}}
+.panel-title {
+  display: block;
+  margin: -10px -15px;
+  padding: 10px 15px;
+}
+/* line 8, panel.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/drew\.michael\/projects\/nrel-sp\/docroot\/profiles\/custom\/nrel_solarpaces_profile\/themes\/custom\/nrel_solarpaces_theme\/less\/component\/panel\.less}line{font-family:\000038}}
+.panel-title,
+.panel-title:hover,
+.panel-title:focus,
+.panel-title:hover:focus {
+  color: inherit;
+}
+/* line 11, panel.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/drew\.michael\/projects\/nrel-sp\/docroot\/profiles\/custom\/nrel_solarpaces_profile\/themes\/custom\/nrel_solarpaces_theme\/less\/component\/panel\.less}line{font-family:\0000311}}
+.panel-title:focus,
+.panel-title:hover {
+  text-decoration: none;
+}
+/*# sourceMappingURL=panel.css.map */

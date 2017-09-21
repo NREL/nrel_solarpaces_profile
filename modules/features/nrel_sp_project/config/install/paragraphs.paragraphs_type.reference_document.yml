@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: reference_document
+label: 'Reference Document'
+behavior_plugins: {  }

@@ -1,0 +1,1285 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall hooks for the nrel_solarpaces_profile subprofile.
+ */
+
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\user\Entity\User;
+use Drupal\user\RoleInterface;
+use \Drupal\taxonomy\Entity\Term;
+use \Drupal\node\Entity\Node;
+use \Drupal\file\Entity\File;
+use \Drupal\field_collection\Entity\FieldCollectionItem;
+use Drupal\paragraphs\Entity\Paragraph;
+
+/**
+ * Implements hook_install().
+ */
+function nrel_solarpaces_profile_install() {
+
+  ///CHECK IF IMAGE DIRECTORy EXISTS AND CREATE IF NEEDED
+  if (!file_exists('sites/default/files/photos')) {
+    mkdir('sites/default/files/photos', 0755);
+  }
+
+    // Can add code in here to make nodes, terms, etc.
+  $modules = [
+    'nrel_sp_project', // Custom content type and feature
+    'admin_toolbar_tools', // Makes admin toolbar easier to use
+    'redirect' // Auto redirects to url aliases
+  ];
+
+  foreach ($modules as $module) {
+    \Drupal::service('module_installer')->install([$module]);
+  }
+
+  // Set the default and admin theme.
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('default', 'nrel_solarpaces_theme')
+    ->save(TRUE);
+
+  //taxonomy import
+  nrel_solar_paces_vocab_import('technology');
+  nrel_solar_paces_vocab_import('status');
+
+  //content import
+  nrel_solar_paces_import_combine_csvs();
+
+  // Set front page and site name.
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', '/node/182')
+    ->set('name', 'Concentrating Solar Power Projects')
+    ->save(TRUE);
+
+  //term view landing page url aliases
+  \Drupal::service('path.alias_storage')->save('/by-technology/1', '/by-technology/parabolic-trough');
+  \Drupal::service('path.alias_storage')->save('/by-technology/2', '/by-technology/linear-fresnel-reflector');
+  \Drupal::service('path.alias_storage')->save('/by-technology/3', '/by-technology/power-tower');
+  \Drupal::service('path.alias_storage')->save('/by-technology/4', '/by-technology/dish-engine');
+  \Drupal::service('path.alias_storage')->save('/by-status/5', '/by-status/operational');
+  \Drupal::service('path.alias_storage')->save('/by-status/6', '/by-status/under-construction');
+  \Drupal::service('path.alias_storage')->save('/by-status/7', '/by-status/under-development');
+  \Drupal::service('path.alias_storage')->save('/by-status/8', '/by-status/request-for-offer');
+  \Drupal::service('path.alias_storage')->save('/by-status/9', '/by-status/currently-non-operational');
+
+  // Create the intial project export file
+  nrel_sp_project_update_project_csv_export_file();
+}
+
+function nrel_solar_paces_vocab_import($vocabulary) {
+  $termsheader = NULL;
+  $processed = 0;
+
+  $path_to_profile = drupal_get_path('profile', 'nrel_solarpaces_profile');
+
+  $all_terms = [];
+  if (($handle = fopen("{$path_to_profile}/files/solarpaces/{$vocabulary}_terms.csv", "r")) !== FALSE) {
+    while (($row = fgetcsv($handle, 100000, ",")) !== FALSE) {
+      if ($termsheader === NULL) {
+        $termsheader = $row;
+        continue;
+      }
+      $all_terms[] = array_combine($termsheader, $row);
+    }
+
+    foreach ($all_terms as $fields) {
+
+      $new_term = Term::create([
+        'name' => $fields['title'],
+        'vid' => $vocabulary,
+      ]);
+
+      $new_term->set('field_lp_title', $fields['field_lp_title']);
+      $new_term->set('field_lp_description', $fields['field_lp_description']);
+
+      if (isset($fields['field_image'])) {
+
+        // Create file object from a locally copied file.
+        $photo_to_copy = $path_to_profile . '/files/nrelphotos/' . $fields['field_image'];
+
+        $uri = file_unmanaged_copy($photo_to_copy, 'public://photos/' . $fields['field_image'], FILE_EXISTS_REPLACE);
+        $file = File::Create([
+          'uri' => $uri,
+        ]);
+        $file->save();
+
+        $new_term->set('field_image', [
+          'target_id' => $file->id(),
+          'alt' => $fields['field_image_alt'],
+        ]);
+      }
+
+      if (isset($fields['field_image_caption'])) {
+        $new_term->set('field_image_caption', $fields['field_image_caption']);
+      }
+      if (isset($fields['short_desc'])) {
+        $new_term->set('field_short_description', $fields['short_desc']);
+      }
+
+      $new_term->save();
+
+      $processed++;
+
+    }
+  }
+
+  drupal_set_message(t('Imported @count terms.', ['@count' => $processed]));
+
+}
+
+function nrel_solar_paces_import_combine_csvs() {
+
+  $path_to_profile = drupal_get_path('profile', 'nrel_solarpaces_profile');
+
+  $filenames = [
+    'dataProjects.csv',
+    'dataDishes.csv',
+    'dataHCEs.csv',
+    'dataPowerTowers.csv',
+    'dataReferenceDocs.csv',
+    'dataFresnel.csv',
+    'dataIncentives.csv',
+    'dataTroughs.csv',
+    'dataGenerationsOfftakers.csv',
+    'dataOwners.csv'
+  ];
+
+  $all_rows = [];
+  $header = [];
+  $last_filename = '';
+  //LOOP THROUGH FILES AND CREATE MASTER HEADER
+  foreach ($filenames as $filename) {
+    if (($handle = fopen("{$path_to_profile}/files/solarpaces/{$filename}", "r")) !== FALSE) {
+      while (($row = fgetcsv($handle, 100000, ",")) !== FALSE) {
+        if ($filename != $last_filename) {
+          //APPEND REMAINING FILES HEADER ROWS
+          foreach ($row as $item) {
+            $item = (string) strtolower(trim(preg_replace('/\PL/u', '', $item)));
+            if (!in_array($item, $header)) {
+              $header[] = (string) strtolower(trim(preg_replace("/\xEF\xBB\xBF/", "", $item)));
+            }
+          }
+          $last_filename = $filename;
+          continue;
+        }
+      }
+    }
+  }
+
+  //LOOP THROUGH FILES AND ADD CONTENT
+  foreach ($filenames as $filename) {
+    $contentheader = NULL;
+    if (($handle = fopen("{$path_to_profile}/files/solarpaces/{$filename}", "r")) !== FALSE) {
+      while (($row = fgetcsv($handle, 100000, ",")) !== FALSE) {
+        if ($contentheader === NULL) {
+          foreach ($row as $item) {
+            if (!in_array($item, $header)) {
+              $contentheader[] = (string) strtolower(trim(preg_replace("/\xEF\xBB\xBF/", "", $item)));
+            }
+          }
+          continue;
+        }
+        $append_rows = array_combine($contentheader, $row);
+        foreach ($append_rows as $append_key => $append_row) {
+          if (!isset($all_rows[$row[0]][$append_key])) {
+            $all_rows[$row[0]][$append_key] = $append_row;
+          }
+          else {
+            if ($append_key != "projectid") {
+              //SET EXISTING ENTRY TO ARRAY
+              if (!is_array($all_rows[$row[0]][$append_key])) {
+                $all_rows[$row[0]][$append_key] = [
+                  $all_rows[$row[0]][$append_key],
+                ];
+              }
+              //ADD DUPLICATE ROW AS NEXT ITEM IN ARRAY
+              $all_rows[$row[0]][$append_key][] = $append_row;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  nrel_solar_paces_import_nodes($all_rows);
+
+}
+
+function nrel_solar_paces_import_nodes($all_rows) {
+
+  drupal_set_time_limit(3600);
+
+  $node_type = 'project';
+
+  $path_to_profile = drupal_get_path('profile', 'nrel_solarpaces_profile');
+
+  $keys = get_node_fields($node_type, 'key');
+  $labels = get_node_fields($node_type, 'label');
+  $mapped_fields = array_combine($keys, $labels);
+
+  $types = get_node_fields($node_type, 'type');
+  $mapped_types = array_combine($keys, $types);
+
+  $count = 0;
+
+  $country_manager = \Drupal::service('address.country_repository')->getList();
+
+  $user_one = \Drupal\user\Entity\User::load(1);
+
+  foreach ($all_rows as $project_key => $project_row) {
+
+    // Create node object with attached file.
+    $node = Node::create([
+      'type' => 'project',
+      'title' => $project_row['projectname'],
+    ]);
+
+    foreach ($project_row as $field_key => $field_value) {
+
+      //SKIP UNUSED FIELDS
+      if (is_string($field_value) && trim($field_value) == '') {
+        continue;
+      }
+      if ($field_value == 'NULL') {
+        continue;
+      }
+      if (in_array($field_value, ['km2', 'm2', 'ft2', 'm&sup2;'])) {
+        $field_value = str_replace(['km2', 'm2', 'ft2', 'm&sup2;'], ['km²', 'm²', 'ft²', 'm²'], $field_value);
+      }
+
+      //GET MAPPED FIELD FROM NODE
+      $node_field_machine_name = nrel_solar_paces_get_mapped_node_key($field_key);
+
+      //SKIP UNMAPPED FIELDS
+      if ($node_field_machine_name == '') {
+        continue;
+      }
+
+      //ADDRESS
+      if ($node_field_machine_name == 'field_address' && !isset($address_check[$project_key])) {
+
+        $admin_area = '';
+
+        $address_check[$project_key] = TRUE;
+
+        //SOME COUNTRIES HAVE STATES
+        if (isset($project_row['state']) && trim($project_row['state']) != '') {
+          $admin_area = $project_row['state'];
+          if($project_row['region'] != '') {
+            $node->set('field_region', $project_row['region']);
+          }
+        } elseif(isset($project_row['region']) && trim($project_row['region']) != '') {
+          $country_regions = \Drupal::service('address.subdivision_repository')->getList([$project_row['country']]);
+          if(in_array($project_row['region'], $country_regions)) {
+            $admin_area = $project_row['region'];
+          } else {
+            $node->set('field_region', $project_row['region']);
+          }
+        }
+
+        $address = [
+          'locality' => $project_row['city'],
+          'country_code' => $project_row['country'],
+          'administrative_area' => $admin_area,
+          'langcode' => 'en',
+        ];
+
+        $node->set('field_address', $address);
+      }
+
+      //LATITUDE LONGITUDE
+      if ($node_field_machine_name == 'field_lat_long_location' && !isset($latlong_check[$project_key])) {
+
+        $latlong_check[$project_key] = TRUE;
+
+        $paragraph = [];
+        $paragraph['type'] = 'lat_long_location';
+        $paragraph['field_latitude_degrees'] = $project_row['latitudedegrees'];
+        $paragraph['field_latitude_direction'] = $project_row['latitudedirection'];
+        $paragraph['field_latitude_minutes'] = $project_row['latitudeminutes'];
+        $paragraph['field_latitude_seconds'] = $project_row['latitudeseconds'];
+        $paragraph['field_longitude_degrees'] = $project_row['longitudedegrees'];
+        $paragraph['field_longitude_minutes'] = $project_row['longitudeminutes'];
+        $paragraph['field_longitude_seconds'] = $project_row['longitudeseconds'];
+        $paragraph['field_longitude_direction'] = $project_row['longitudedirection'];
+        $lat_long = Paragraph::create($paragraph);
+        $lat_long->save();
+
+        //WE SAVE AFTER SAVING $node
+      }
+
+      //HCEs
+      if ($node_field_machine_name == 'field_hces' && !isset($hces_check[$project_key])) {
+        $hces_check[$project_key] = TRUE;
+
+        $hces_array = [];
+        if(is_array($project_row['hcemanufacturer'])) {
+          foreach ($project_row['hcemanufacturer'] as $hcemanufacturer_key => $hcemanufacturer_value) {
+            $paragraph = [];
+            $paragraph['type'] = 'hce';
+            $paragraph['field_manufacturer'] = $project_row['hcemanufacturer'][$hcemanufacturer_key];
+            $paragraph['field_model'] = $project_row['hcemodel'][$hcemanufacturer_key];
+            $paragraph['field_number_of_hces'] = $project_row['numberhces'][$hcemanufacturer_key];
+            $paragraph['field_hce_type'] = $project_row['hcetype'][$hcemanufacturer_key];
+            $paragraph['field_hce_length'] = $project_row['hcelength'][$hcemanufacturer_key];
+            $paragraph['field_hce_length_tube_units'] = $project_row['hcelengthtubeunits'][$hcemanufacturer_key];
+            $hcemanufacturers = Paragraph::create($paragraph);
+            $hcemanufacturers->save();
+            $hces_array[] = $hcemanufacturers;
+          }
+        } else {
+          $paragraph = [];
+          $paragraph['type'] = 'hce';
+          $paragraph['field_manufacturer'] = $project_row['hcemanufacturer'];
+          $paragraph['field_model'] = $project_row['hcemodel'];
+          $paragraph['field_number_of_hces'] = $project_row['numberhces'];
+          $paragraph['field_hce_type'] = $project_row['hcetype'];
+          $paragraph['field_hce_length'] = $project_row['hcelength'];
+          $paragraph['field_hce_length_tube_units'] = $project_row['hcelengthtubeunits'];
+          $hcemanufacturers = Paragraph::create($paragraph);
+          $hcemanufacturers->save();
+          $hces_array[] = $hcemanufacturers;
+        }
+      }
+
+      //OWNERS
+      if ($node_field_machine_name == 'field_owners' && !isset($owners_check[$project_key])) {
+
+        $owners_check[$project_key] = TRUE;
+
+        $owners_array = [];
+        if(is_array($project_row['owner'])) {
+          foreach ($project_row['owner'] as $owner_key => $owner_value) {
+            $paragraph = [];
+            $paragraph['type'] = 'owners';
+            $paragraph['field_owner'] = $project_row['owner'][$owner_key];
+            if($project_row['ownerpercent'][$owner_key] != 'NULL') {
+              $paragraph['field_owner_percent'] = $project_row['ownerpercent'][$owner_key];
+            }
+            $owner = Paragraph::create($paragraph);
+            $owner->save();
+            $owners_array[] = $owner;
+          }
+        } else {
+          $paragraph = [];
+          $paragraph['type'] = 'owners';
+          $paragraph['field_owner'] = $project_row['owner'];
+          if($project_row['ownerpercent'] != 'NULL') {
+            $paragraph['field_owner_percent'] = $project_row['ownerpercent'];
+          }
+          $owner = Paragraph::create($paragraph);
+          $owner->save();
+          $owners_array[] = $owner;
+        }
+
+        //WE SAVE AFTER SAVING $node
+      }
+
+      //CONTACT MAIL LINK(s)
+      if ($node_field_machine_name == 'field_contact' && !isset($contact_link_check[$project_key])) {
+
+        $contact_link_check[$project_key] = TRUE;
+
+        $contact_links = [];
+        if (trim($project_row['contact1email']) != '' && $project_row['contact1email'] != 'NULL') {
+          $paragraph = [];
+          $paragraph['type'] = 'contact';
+          $paragraph['field_email_address'] = $project_row['contact1email'];
+          $paragraph['field_contact_name'] = $project_row['contact1'];
+          $paragraph['field_company'] = $project_row['contactcompany'];
+          if($project_row['contactwebsite'] != '' && strpos($project_row['contactwebsite'], 'http://') === false) {
+            $project_row['contactwebsite'] = 'http://' . $project_row['contactwebsite'];
+          }
+          $paragraph['field_contact_website'] = $project_row['contactwebsite'];
+          $contact = Paragraph::create($paragraph);
+          $contact->save();
+          $contact_links[] = $contact;
+        }
+
+        if (trim($project_row['contact2email']) != '' && $project_row['contact2email'] != 'NULL') {
+          $paragraph = [];
+          $paragraph['type'] = 'contact';
+          $paragraph['field_email_address'] = $project_row['contact2email'];
+          $paragraph['field_contact_name'] = $project_row['contact2'];
+          $paragraph['field_company'] = $project_row['contactcompany2'];
+          if($project_row['contactwebsite2'] != '' && strpos($project_row['contactwebsite2'], 'http://') === false) {
+            $project_row['contactwebsite2'] = 'http://' . $project_row['contactwebsite2'];
+          }
+          $paragraph['field_contact_website'] = $project_row['contactwebsite2'];
+          $contact = Paragraph::create($paragraph);
+          $contact->save();
+          $contact_links[] = $contact;
+        }
+
+        //WE SAVE AFTER SAVING $node
+      }
+
+      //DEVELOPERS
+      if ($node_field_machine_name == 'field_developer_s_' && !isset($developers_check[$project_key])) {
+
+        $developers_check[$project_key] = TRUE;
+
+        $developers = [];
+
+        $developers[] = $project_row['developer1'];
+
+        if (trim($project_row['developer2']) != '') {
+          $developers[] = $project_row['developer2'];
+        }
+        $node->set($node_field_machine_name, $developers);
+      }
+
+      //OPERATORS
+      if ($node_field_machine_name == 'field_operator' && !isset($operators_check[$project_key])) {
+
+        $operators_check[$project_key] = TRUE;
+
+        $operators = [];
+
+        $operators[] = $project_row['operator1'];
+
+        if (trim($project_row['operator2']) != '') {
+          $operators[] = $project_row['operator2'];
+        }
+        $node->set($node_field_machine_name, $operators);
+      }
+
+      //EPC CONTRACTOR
+      if ($node_field_machine_name == 'field_epc_contractor' && !isset($epccontractor_check[$project_key])) {
+
+        $epccontractor_check[$project_key] = TRUE;
+
+        $epccontractor = $project_row['epccontractor'];
+
+        if (trim($project_row['epccontractortask']) != '') {
+          $epccontractor .= ' : ' . $project_row['epccontractortask'];
+        }
+        $node->set($node_field_machine_name, $epccontractor);
+      }
+
+      //PHOTO
+      if ($node_field_machine_name == 'field_photo' && !isset($photodata_check[$project_key]) && $project_row['photo'] != 'NULL') {
+
+        $photodata_check[$project_key] = TRUE;
+
+        // Create file object from a locally copied file.
+        $photo_to_copy = $path_to_profile . '/files/nrelphotos/' . $project_row['photo'];
+        $uri = file_unmanaged_copy($photo_to_copy, 'public://photos/' . $project_row['photo'], FILE_EXISTS_REPLACE);
+        $file = File::Create([
+          'uri' => $uri,
+        ]);
+        $file->save();
+
+        $photodata = [
+          'target_id' => $file->id(),
+          'alt' => $project_row['alttext'],
+        ];
+        $node->set($node_field_machine_name, $photodata);
+
+      }
+
+      //field_reference_doc
+      if ($node_field_machine_name == 'field_reference_doc' && !isset($referencedoc_check[$project_key]) && $project_row['referencedoc'] != '') {
+
+        $referencedoc_check[$project_key] = TRUE;
+
+        $reference_links = [];
+
+        if(is_array($project_row['referencedoc'])) {
+          foreach ($project_row['referencedoc'] as $refdoc_key => $refdoc_value) {
+            $paragraph = [];
+            $paragraph['type'] = 'reference_document';
+            $paragraph['field_key_reference_url'] = $project_row['referencedoc'][$refdoc_key];
+            if($project_row['type'][$refdoc_key] != 'NULL') {
+              $paragraph['field_key_reference_type'] = str_replace('Web site', 'Website', $project_row['type'][$refdoc_key]);
+            }
+            $refdoc = Paragraph::create($paragraph);
+            $refdoc->save();
+            $reference_links[] = $refdoc;
+          }
+        } else {
+          $paragraph = [];
+          $paragraph['type'] = 'reference_document';
+          $paragraph['field_key_reference_url'] = $project_row['referencedoc'];
+          if($project_row['type'] != 'NULL') {
+            $paragraph['field_key_reference_type'] = str_replace('Web site', 'Website', $project_row['type']);
+          }
+          $refdoc = Paragraph::create($paragraph);
+          $refdoc->save();
+          $reference_links[] = $refdoc;
+        }
+
+        //WE SAVE AFTER SAVING $node
+      }
+
+      //TERMS
+      if ($node_field_machine_name == 'field_status' && isset($project_row['status']) && $project_row['status'] != '') {
+
+        $term_name = $project_row['status'];
+        $term = \Drupal::entityTypeManager()
+          ->getStorage('taxonomy_term')
+          ->loadByProperties(['name' => $term_name]);
+        $tid = array_keys($term);
+
+        if (isset($tid[0])) {
+          $node->set($node_field_machine_name, ['target_id' => $tid[0]]);
+        }
+
+      }
+
+      if ($node_field_machine_name == 'field_technology' && isset($project_row['technology']) && $project_row['technology'] != '') {
+
+        $term_name = $project_row['technology'];
+        $term = \Drupal::entityTypeManager()
+          ->getStorage('taxonomy_term')
+          ->loadByProperties(['name' => $term_name]);
+        $tid = array_keys($term);
+
+        if (isset($tid[0])) {
+          $node->set($node_field_machine_name, ['target_id' => $tid[0]]);
+        }
+
+      }
+
+      //DATES
+      if ($node_field_machine_name == 'field_break_ground' && isset($project_row['breakgroundyear']) && !isset($breakground_check[$project_key])) {
+
+        $breakground_check[$project_key] = TRUE;
+
+        $month = (trim($project_row['breakgroundmonth']) != '' && trim($project_row['breakgroundmonth']) != 'NULL' ? trim($project_row['breakgroundmonth']) : 'January');
+        $day = (trim($project_row['breakgroundday']) != '' && trim($project_row['breakgroundday']) != 'NULL' ? trim($project_row['breakgroundday']) : '1');
+        $year = (trim($project_row['breakgroundyear']) != '' && trim($project_row['breakgroundyear']) != 'NULL' ? trim($project_row['breakgroundyear']) : '');
+
+        $date_string = trim($month . ($day != '' ? ' ' . $day : '') . ' ' . $year);
+        if($date_string != '') {
+          $node->set($node_field_machine_name, date('Y-m-d', strtotime($date_string)));
+        }
+      }
+
+      if ($node_field_machine_name == 'field_status_date' && isset($project_row['statusdate']) && !isset($statusdate[$project_key])) {
+
+        $statusdate[$project_key] = TRUE;
+
+        $date_string = $project_row['statusdate'];
+
+        $node->set($node_field_machine_name, date('Y-m-d', strtotime($date_string)));
+
+      }
+
+      if ($node_field_machine_name == 'field_production_start_date' && isset($project_row['productionstartyear']) && !isset($productionstart_check[$project_key])) {
+
+        $productionstart_check[$project_key] = TRUE;
+
+        $month = (trim($project_row['productionstartmonth']) != '' && trim($project_row['productionstartmonth']) != 'NULL' ? trim($project_row['productionstartmonth']) : 'January');
+        $day = (trim($project_row['productionstartday']) != '' && trim($project_row['productionstartday']) != 'NULL' ? trim($project_row['productionstartday']) : '1');
+        $year = (trim($project_row['productionstartyear']) != '' && trim($project_row['productionstartyear']) != 'NULL' ? trim($project_row['productionstartyear']) : '');
+
+        $date_string = trim($month . ($day != '' ? ' ' . $day : '') . ' ' . $year);
+        if($date_string != '') {
+          $node->set($node_field_machine_name, date('Y-m-d', strtotime($date_string)));
+        }
+
+      }
+
+      if ($node_field_machine_name == 'field_ppa_tariff_date' && isset($project_row['ppadateyear']) && !isset($ppadate_check[$project_key])) {
+
+        $ppadate_check[$project_key] = TRUE;
+
+        $month = (trim($project_row['ppadatemonth']) != '' && trim($project_row['ppadatemonth']) != 'NULL' ? trim($project_row['ppadatemonth']) : 'January');
+        $day = (trim($project_row['ppadateday']) != '' && trim($project_row['ppadateday']) != 'NULL' ? trim($project_row['ppadateday']) : '1');
+        $year = (trim($project_row['ppadateyear']) != '' && trim($project_row['ppadateyear']) != 'NULL' ? trim($project_row['ppadateyear']) : '');
+
+        $date_string = trim($month . ($day != '' ? ' ' . $day : '') . ' ' . $year);
+        if($date_string != '') {
+          $node->set($node_field_machine_name, date('Y-m-d', strtotime($date_string)));
+        }
+
+      }
+
+      if ($node_field_machine_name == 'field_incentives' && !isset($incentives_check[$project_key])) {
+        $incentives_check[$project_key] = TRUE;
+
+        $incentives_array = [];
+        if(is_array($project_row['incentive'])) {
+          foreach ($project_row['incentive'] as $incentive_key => $incentive_value) {
+            $incentives_array[] = $incentive_value;
+          }
+        } else {
+          $incentives_array[] = $project_row['incentive'];
+        }
+        $node->set($node_field_machine_name, $incentives_array);
+
+      }
+
+      if ($node_field_machine_name == 'field_generation_offtaker_s_' && !isset($gen_offtakers[$project_key])) {
+        $gen_offtakers[$project_key] = TRUE;
+
+        $gen_offtakers_array = [];
+        if(is_array($project_row['generationofftaker'])) {
+          foreach ($project_row['generationofftaker'] as $gen_off_key => $gen_off_value) {
+            $gen_offtakers_array[] = $gen_off_value;
+          }
+        } else {
+          $gen_offtakers_array[] = $project_row['generationofftaker'];
+        }
+        $node->set($node_field_machine_name, $gen_offtakers_array);
+
+      }
+
+      if ($node_field_machine_name == 'drive_manufacturer' && !isset($drive_manufacturer[$project_key])) {
+        $drive_manufacturer[$project_key] = TRUE;
+
+        if($project_row['technology'] != '') {
+
+          switch($project_row['technology']) {
+            case 'Parabolic trough':
+              $machine_name = 'field_drive_manufacturer_1';
+              $machine_name2 = 'field_drive_manufacturer_2';
+              break;
+            case 'Power tower':
+              $machine_name = 'field_heliostat_drive_manufactur';
+              $machine_name2 = 'field_heliostat_drive_man_2';
+              break;
+            case 'Linear Fresnel reflector':
+              $machine_name = 'field_lf_drive_manufacturer';
+              $machine_name2 = 'field_lf_drive_manufacturer_2';
+              break;
+          }
+
+          if($project_row['drivemanufacturer1'] != '' && $machine_name != '') {
+            $node->set($machine_name, $project_row['drivemanufacturer1']);
+          }
+          if($project_row['drivemanufacturer2'] != '' && $machine_name2 != '') {
+            $node->set($machine_name2, $project_row['drivemanufacturer2']);
+          }
+
+        }
+      }
+
+      $special_handling = [
+        'title',
+        'field_address',
+        'field_lat_long_location',
+        'field_contact',
+        'field_developer_s_',
+        'field_operator',
+        'field_epc_contractor',
+        'field_photo',
+        'field_reference_doc',
+        'field_owners',
+        'field_generation_offtaker_s_',
+        'field_hces',
+        'field_incentives',
+        'drive_manufacturer',
+      ];
+
+      $date_fields = [
+        'field_break_ground',
+        'field_status_date',
+        'field_production_start_date',
+        'field_ppa_tariff_date',
+      ];
+
+      $terms = [
+        'field_status',
+        'field_technology',
+      ];
+
+      $non_standard_fields = array_merge($special_handling, $date_fields);
+      $non_standard_fields = array_merge($non_standard_fields, $terms);
+
+      //ALL BASIC STRING OR INTEGER FIELDS
+      if (!in_array($node_field_machine_name, $non_standard_fields)) {
+        $node->set($node_field_machine_name, $field_value);
+      }
+    }
+    // status, created, and changed time
+    if($project_row['deleted'] == '1') {
+      $node->setPublished(0);
+      $node->set('moderation_state', 'deleted');
+    }
+    else {
+      if (strtolower($project_row['publishstatus']) == 'published') {
+        $node->setPublished(1);
+        $node->set('moderation_state', 'published');
+      }
+      else if (strtolower($project_row['publishstatus']) == 'archived') {
+        $node->setPublished(0);
+        $node->set('moderation_state', 'archived');
+      }
+    }
+    $node->setOwner($user_one);
+
+
+    if (isset($hces_check[$project_key]) && count($hces_array)) {
+      $current = [];
+      foreach($hces_array as $hce) {
+        // Grab any existing paragraphs from the node, and add this one
+        $current[] = [
+          'target_id' => $hce->id(),
+          'target_revision_id' => $hce->getRevisionId(),
+        ];
+      }
+      $node->set('field_hces', $current);
+    }
+
+    if (isset($owners_check[$project_key]) && count($owners_array)) {
+      $current = [];
+      foreach($owners_array as $owner) {
+        // Grab any existing paragraphs from the node, and add this one
+        $current[] = [
+          'target_id' => $owner->id(),
+          'target_revision_id' => $owner->getRevisionId(),
+        ];
+      }
+      $node->set('field_owners', $current);
+    }
+
+    if (isset($contact_link_check[$project_key]) && count($contact_links)) {
+      $current = [];
+      foreach($contact_links as $contact) {
+        // Grab any existing paragraphs from the node, and add this one
+        $current[] = [
+          'target_id' => $contact->id(),
+          'target_revision_id' => $contact->getRevisionId(),
+        ];
+      }
+      $node->set('field_contact', $current);
+    }
+
+    if (isset($referencedoc_check[$project_key]) && count($reference_links)) {
+      $current = [];
+      foreach($reference_links as $refdoc) {
+        // Grab any existing paragraphs from the node, and add this one
+        $current[] = [
+          'target_id' => $refdoc->id(),
+          'target_revision_id' => $refdoc->getRevisionId(),
+        ];
+      }
+      $node->set('field_reference_doc', $current);
+    }
+
+    if (isset($latlong_check[$project_key]) && isset($lat_long)) {
+      $current = [];
+      // Grab any existing paragraphs from the node, and add this one
+      $current[] = [
+        'target_id' => $lat_long->id(),
+        'target_revision_id' => $lat_long->getRevisionId(),
+      ];
+      $node->set('field_lat_long_location', $current);
+    }
+
+    $node->save();
+
+    $count++;
+    if($count > 20) {
+      //exit();
+    }
+  }
+
+}
+
+function nrel_solar_paces_get_mapped_node_key($fieldname) {
+
+  $node_field_machine_name = '';
+
+  switch ($fieldname) {
+    case 'owner':
+    case 'ownerpercent':
+      $node_field_machine_name = 'field_owners';
+      break;
+    case 'projectname':
+      $node_field_machine_name = 'title';
+      break;
+    case 'shortname':
+      $node_field_machine_name = 'field_short_name';
+      break;
+    case 'country':
+    case 'state':
+    case 'city':
+    case 'region':
+      $node_field_machine_name = 'field_address';
+      break;
+    case 'county':
+      $node_field_machine_name = 'field_address_county';
+      break;
+    case 'latitudedegrees':
+    case 'latitudeminutes':
+    case 'latitudeseconds':
+    case 'latitudedirection':
+    case 'longitudedegrees':
+    case 'longitudeminutes':
+    case 'longitudeseconds':
+    case 'longitudedirection':
+      $node_field_machine_name = 'field_lat_long_location';
+      break;
+    case 'technology':
+      $node_field_machine_name = 'field_technology';
+      break;
+    case 'status':
+      $node_field_machine_name = 'field_status';
+      break;
+    case 'statusdate':
+      $node_field_machine_name = 'field_status_date';
+      break;
+    case 'ppadatemonth':
+      $node_field_machine_name = 'field_ppa_tariff_date';
+      break;
+    case 'ppadateday':
+      $node_field_machine_name = 'field_ppa_tariff_date';
+      break;
+    case 'ppadateyear':
+      $node_field_machine_name = 'field_ppa_tariff_date';
+      break;
+    case 'feedintarifftype':
+      $node_field_machine_name = 'field_feed_in_tariff';
+      break;
+    case 'tariffrate':
+      $node_field_machine_name = 'field_tariff_rate';
+      break;
+    case 'tariffrateunit':
+      $node_field_machine_name = 'field_tariff_rate_unit';
+      break;
+    case 'tariffyears':
+      $node_field_machine_name = 'field_tariff_period';
+      break;
+    case 'tariffinfo':
+      $node_field_machine_name = 'field_tariff_info';
+      break;
+    case 'breakgroundmonth':
+      $node_field_machine_name = 'field_break_ground';
+      break;
+    case 'breakgroundday':
+      $node_field_machine_name = 'field_break_ground';
+      break;
+    case 'breakgroundyear':
+      $node_field_machine_name = 'field_break_ground';
+      break;
+    case 'productionstartmonth':
+      $node_field_machine_name = 'field_production_start_date';
+      break;
+    case 'productionstartday':
+      $node_field_machine_name = 'field_production_start_date';
+      break;
+    case 'productionstartyear':
+      $node_field_machine_name = 'field_production_start_date';
+      break;
+    case 'sitesolarresource':
+      $node_field_machine_name = 'field_site_solar_resource';
+      break;
+    case 'sitesolarresourcedatasource':
+      $node_field_machine_name = 'field_site_solar_resource_data_s';
+      break;
+    case 'projecttype':
+      $node_field_machine_name = 'field_project_type';
+      break;
+    case 'cost':
+      $node_field_machine_name = 'field_cost';
+      break;
+    case 'costcurrency':
+      $node_field_machine_name = 'field_cost_currency';
+      break;
+    case 'costinfosource':
+      $node_field_machine_name = 'field_cost_info_source';
+      break;
+    case 'electricitygeneration':
+      $node_field_machine_name = 'field_electricity_generation';
+      break;
+    case 'electricitygenerationbasis':
+      $node_field_machine_name = 'field_electricity_generation_bas';
+      break;
+    case 'electricitygenerationexplanation':
+      $node_field_machine_name = 'field_electricity_generation_exp';
+      break;
+    case 'contactcompany':
+    case 'contactwebsite':
+    case 'contactcompany2':
+    case 'contactwebsite2':
+    case 'contact1':
+    case 'contact1email':
+    case 'contact2':
+    case 'contact2email':
+      $node_field_machine_name = 'field_contact';
+      break;
+    case 'constructionjobyears':
+      $node_field_machine_name = 'field_construction_job_years';
+      break;
+    case 'annualoperationsjobs':
+      $node_field_machine_name = 'field_annual_operations_jobs';
+      break;
+    case 'developer1':
+      $node_field_machine_name = 'field_developer_s_';
+      break;
+    case 'developer2':
+      $node_field_machine_name = 'field_developer_s_';
+      break;
+    case 'operator1':
+      $node_field_machine_name = 'field_operator';
+      break;
+    case 'operator2':
+      $node_field_machine_name = 'field_operator';
+      break;
+    case 'epccontractor':
+      $node_field_machine_name = 'field_epc_contractor';
+      break;
+    case 'epccontractortask':
+      $node_field_machine_name = 'field_epc_contractor';
+      break;
+    case 'landarea':
+      $node_field_machine_name = 'field_land_area';
+      break;
+    case 'landareaunits':
+      $node_field_machine_name = 'field_land_area_units';
+      break;
+    case 'drivemanufacturer1':
+      $node_field_machine_name = 'drive_manufacturer';
+      break;
+    case 'drivemanufacturer2':
+      $node_field_machine_name = 'drive_manufacturer';
+      break;
+    case 'heattransferfluidtype':
+      $node_field_machine_name = 'field_heat_transfer_fluid_type';
+      break;
+    case 'heattransferfluidcompany':
+      $node_field_machine_name = 'field_heat_transfer_fluid_compan';
+      break;
+    case 'grossturbinecapacity':
+      $node_field_machine_name = 'field_gross_turbine_capacity';
+      break;
+    case 'netcapacity':
+      $node_field_machine_name = 'field_net_capacity';
+      break;
+    case 'otherturbinecapacity':
+      $node_field_machine_name = 'field_other_turbine_capacity';
+      break;
+    case 'capacityunit':
+      $node_field_machine_name = 'field_capacity_unit';
+      break;
+    case 'turbinethermodynamiccycletype':
+      $node_field_machine_name = 'field_turbine_thermodynamic_cycl';
+      break;
+    case 'powercyclepressure':
+      $node_field_machine_name = 'field_power_cycle_pressure';
+      break;
+    case 'powercyclepressureunits':
+      $node_field_machine_name = 'field_power_cycle_pressure_units';
+      break;
+    case 'turbinesupplier':
+      $node_field_machine_name = 'field_turbine_supplier';
+      break;
+    case 'turbinesuppliercountry':
+      $node_field_machine_name = 'field_turbine_supplier_country';
+      break;
+    case 'coolingmethod':
+      $node_field_machine_name = 'field_cooling_method';
+      break;
+    case 'coolingmethoddescription':
+      $node_field_machine_name = 'field_cooling_method_description';
+      break;
+    case 'turbineefficiency':
+      $node_field_machine_name = 'field_turbine_efficiency';
+      break;
+    case 'designpointsolarelectricefficiency':
+      $node_field_machine_name = 'field_design_point_solar_electri';
+      break;
+    case 'designpointconditions':
+      $node_field_machine_name = 'field_design_point_conditions';
+      break;
+    case 'annualsolarelectricefficiency':
+      $node_field_machine_name = 'field_annual_solar_electric_effi';
+      break;
+    case 'backuptype':
+      $node_field_machine_name = 'field_backup_type';
+      break;
+    case 'backuppercent':
+      $node_field_machine_name = 'field_backup_percent';
+      break;
+    case 'storagetype':
+      $node_field_machine_name = 'field_storage_type';
+      break;
+    case 'storagecapacity':
+      $node_field_machine_name = 'field_storage_capacity';
+      break;
+    case 'storagecapacityunit':
+      $node_field_machine_name = 'field_storage_capacity_unit';
+      break;
+    case 'storagedescription':
+      $node_field_machine_name = 'field_storage_description';
+      break;
+    case 'longdescription':
+      $node_field_machine_name = 'field_long_description';
+      break;
+    case 'photo':
+      $node_field_machine_name = 'field_photo';
+      break;
+    case 'alttext':
+      $node_field_machine_name = 'field_photo';
+      break;
+    case 'caption':
+      $node_field_machine_name = 'field_caption';
+      break;
+    case 'credit':
+      $node_field_machine_name = '';
+      break;
+    case 'publishstatus':
+      $node_field_machine_name = 'moderation_state';
+      break;
+    case 'draftid':
+      $node_field_machine_name = '';
+      break;
+    case 'deleted':
+      $node_field_machine_name = '';
+      break;
+    case 'numberscas':
+      $node_field_machine_name = 'field_number_of_solar_collector_';
+      break;
+    case 'numberloops':
+      $node_field_machine_name = 'field_number_of_loops';
+      break;
+    case 'solarfieldaperture':
+    case 'solarfieldaperturearea':
+      $node_field_machine_name = 'field_solar_field_aperture_area';
+      break;
+    case 'solarfieldapertureunits':
+    case 'solarfieldapertureareaunits':
+      $node_field_machine_name = 'field_solar_field_aperture_area_';
+      break;
+    case 'scaarea':
+      $node_field_machine_name = 'field_sca_area';
+      break;
+    case 'scaareaunits':
+      $node_field_machine_name = 'field_sca_area_units';
+      break;
+    case 'scamanufacturer1':
+      $node_field_machine_name = 'field_sca_manufacturer_1';
+      break;
+    case 'scamanufacturer2':
+      $node_field_machine_name = 'field_sca_manufacturer_2';
+      break;
+    case 'scamodel1':
+      $node_field_machine_name = 'field_sca_model_1';
+      break;
+    case 'scamodel2':
+      $node_field_machine_name = 'field_sca_model_2';
+      break;
+    case 'scadescription1':
+      $node_field_machine_name = 'field_sca_description_1';
+      break;
+    case 'scadescription2':
+      $node_field_machine_name = 'field_sca_description_2';
+      break;
+    case 'scamirrormanufacturer1':
+      $node_field_machine_name = 'field_sca_mirror_manufacturer_1';
+      break;
+    case 'scamirrormanufacturer2':
+      $node_field_machine_name = 'field_sca_mirror_manufacturer_2';
+      break;
+    case 'scamirrormodel1':
+      $node_field_machine_name = 'field_sca_mirror_model_1';
+      break;
+    case 'scamirrormodel2':
+      $node_field_machine_name = 'field_sca_mirror_model_2';
+      break;
+    case 'scalength':
+      $node_field_machine_name = 'field_sca_length';
+      break;
+    case 'scalengthunits':
+      $node_field_machine_name = 'field_sca_length_units';
+      break;
+    case 'numbermodulespersca':
+      $node_field_machine_name = 'field_number_of_modules_per_sca';
+      break;
+    case 'numberscasperloop':
+      $node_field_machine_name = 'field_number_of_scas_per_loop';
+      break;
+    case 'totalloops':
+      $node_field_machine_name = 'field_total_loops';
+      break;
+    case 'solarfieldinlettemperature':
+      $node_field_machine_name = 'field_solar_field_inlet_temperat';
+      break;
+    case 'solarfieldoutlettemperature':
+      $node_field_machine_name = 'field_solar_field_outlet_tempera';
+      break;
+    case 'solarfieldtemperatureunits':
+      $node_field_machine_name = 'field_solar_field_temperature_un';
+      break;
+    case 'solarfieldtemperaturedifference':
+      $node_field_machine_name = 'field_solar_field_temperature_di';
+      break;
+    case 'generationofftaker':
+      $node_field_machine_name = 'field_generation_offtaker_s_';
+      break;
+    case 'hcemanufacturer':
+    case 'hcemodel':
+    case 'numberhces':
+    case 'hcetype':
+    case 'hcelength':
+    case 'hcelengthtubeunits':
+      $node_field_machine_name = 'field_hces';
+      break;
+    case 'referencedoc':
+    case 'type':
+    case 'pdf':
+      $node_field_machine_name = 'field_reference_doc';
+      break;
+    case 'dishaperturearea':
+      $node_field_machine_name = 'field_dish_aperture_area';
+      break;
+    case 'dishapertureareaunits':
+      $node_field_machine_name = 'field_dish_aperture_area_units';
+      break;
+    case 'linelength':
+      $node_field_machine_name = 'field_line_length';
+        break;
+    case 'linelengthunits':
+      $node_field_machine_name = 'field_line_length_units';
+        break;
+    case 'widthmirrorsinline':
+      $node_field_machine_name = 'field_mirror_width';
+        break;
+    case 'widthmirrorsunits':
+      $node_field_machine_name = 'field_mirror_width_units';
+        break;
+    case 'collectormanufacturer1':
+      $node_field_machine_name = 'field_collector_manufacturer_1';
+        break;
+    case 'collectormodel1':
+      $node_field_machine_name = 'field_collector_model_1';
+        break;
+    case 'collectormanufacturer2':
+      $node_field_machine_name = 'field_collector_manufacturer_2';
+        break;
+    case 'collectormodel2':
+      $node_field_machine_name = 'field_collector_model_2';
+        break;
+    case 'collectordescription1':
+      $node_field_machine_name = 'field_collector_description_1';
+        break;
+    case 'collectordescription2':
+      $node_field_machine_name = 'field_collector_description_2';
+        break;
+    case 'lfrmirrormanufacturer1':
+      $node_field_machine_name = 'field_lfr_mirror_manufacturer_1';
+        break;
+    case 'lfrreceivermanufacturer1':
+    case 'receivermanufacturer1':
+      $node_field_machine_name = 'field_receiver_manufacturer_1';
+        break;
+    case 'lfrreceivermanufacturer2':
+    case 'receivermanufacturer2':
+      $node_field_machine_name = 'field_receiver_manufacturer_2';
+        break;
+    case 'numbermirrorsacrossline':
+      $node_field_machine_name = 'field_number_of_mirrors_across_l';
+        break;
+    case 'lfrreceivertype1':
+      $node_field_machine_name = 'field_lfr_receiver_type_1';
+        break;
+    case 'incentive':
+      $node_field_machine_name = 'field_incentives';
+        break;
+    case 'numberlines':
+      $node_field_machine_name = 'field_number_of_lines';
+        break;
+    case 'receiverlength1':
+      $node_field_machine_name = 'field_receiver_length_1';
+        break;
+    case 'receiverlengthunits1':
+      $node_field_machine_name = 'field_receiver_length_units';
+        break;
+    case 'receiverlength2':
+      $node_field_machine_name = 'field_receiver_length_2';
+        break;
+    case 'receiverlengthunits2':
+      $node_field_machine_name = 'field_receiver_2_length_units';
+        break;
+    case 'heliostatfieldarea':
+      $node_field_machine_name = 'field_heliostat_field_area';
+        break;
+    case 'heliostatfieldareaunits':
+      $node_field_machine_name = 'field_heliostat_field_area_units';
+        break;
+    case 'numberofheliostats':
+      $node_field_machine_name = 'field_number_of_heliostats';
+        break;
+    case 'heliostatarea':
+      $node_field_machine_name = 'field_heliostat_area';
+        break;
+    case 'heliostatareaunits':
+      $node_field_machine_name = 'field_heliostat_area_units';
+        break;
+    case 'heliostatmanufacturer1':
+      $node_field_machine_name = 'field_heliostat_manufacturer';
+        break;
+    case 'heliostatmodel1':
+      $node_field_machine_name = 'field_heliostat_model_1';
+        break;
+    case 'heliostatdescription1':
+      $node_field_machine_name = 'field_heliostat_description_1';
+        break;
+    case 'towerheight':
+      $node_field_machine_name = 'field_tower_height';
+        break;
+    case 'towerheightunits':
+      $node_field_machine_name = 'field_tower_height_units';
+        break;
+    case 'receivertype1':
+      $node_field_machine_name = 'field_receiver_type_1';
+        break;
+    case 'receiveroutlettemperature':
+      $node_field_machine_name = 'field_receiver_outlet_temperatur';
+        break;
+    case 'receiveroutlettemperatureunits':
+      $node_field_machine_name = 'field_outlet_temperature_units';
+        break;
+    case 'receiverinlettemperature':
+      $node_field_machine_name = 'field_receiver_inlet_temperature';
+        break;
+    case 'receivertemperaturedifference':
+      $node_field_machine_name = 'field_receiver_temperature_diffe';
+        break;
+    case 'numberdishes':
+      $node_field_machine_name = 'field_number_of_dishes';
+        break;
+    case 'dishmanufacturer1':
+      $node_field_machine_name = 'field_dish_manufacturer_1';
+        break;
+    case 'dishmodel1':
+      $node_field_machine_name = 'field_dish_model_1';
+        break;
+    case 'dishdescription1':
+      $node_field_machine_name = 'field_dish_description_1';
+        break;
+    case 'dishdescription2':
+      $node_field_machine_name = 'field_dish_description_2';
+        break;
+    case 'panelheight':
+      $node_field_machine_name = 'field_panel_height';
+        break;
+    case 'panelheightunits':
+      $node_field_machine_name = 'field_panel_height_units';
+        break;
+    case 'receivertype2':
+      $node_field_machine_name = 'field_receiver_type_2';
+        break;
+    case 'receiverdiameter':
+      $node_field_machine_name = 'field_receiver_diameter';
+        break;
+    case 'receiverdiameterunits':
+      $node_field_machine_name = 'field_receiver_diameter_units';
+        break;
+    case 'credit':
+      $node_field_machine_name = 'field_photo_credit';
+        break;
+    default:
+      $node_field_machine_name = '';
+  }
+  return $node_field_machine_name;
+
+}

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_line_length
+    - node.type.project
+id: node.project.field_line_length
+field_name: field_line_length
+entity_type: node
+bundle: project
+label: 'Line Length'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

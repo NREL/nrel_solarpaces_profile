@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hce.field_hce_length
+    - field.field.paragraph.hce.field_hce_length_tube_units
+    - field.field.paragraph.hce.field_hce_type
+    - field.field.paragraph.hce.field_manufacturer
+    - field.field.paragraph.hce.field_model
+    - field.field.paragraph.hce.field_number_of_hces
+    - paragraphs.paragraphs_type.hce
+  module:
+    - workbench_moderation
+id: paragraph.hce.default
+targetEntityType: paragraph
+bundle: hce
+mode: default
+content:
+  field_hce_length:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_hce_length_tube_units:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_hce_type:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_manufacturer:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_model:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_number_of_hces:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

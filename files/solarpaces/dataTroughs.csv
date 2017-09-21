@@ -1,0 +1,116 @@
+﻿ProjectID,NumberSCAs,NumberLoops,SolarFieldApertureArea,SolarFieldApertureAreaUnits,SCAArea,SCAAreaUnits,SCAManufacturer1,SCAModel1,SCADescription1,SCAManufacturer2,SCAModel2,SCADescription2,SCAMirrorManufacturer1,SCAMirrorModel1,SCAMirrorManufacturer2,SCAMirrorModel2,SCALength,SCALengthUnits,NumberModulesPerSCA,NumberSCAsPerLoop,TotalLoops,SolarFieldInletTemperature,SolarFieldOutletTemperature,SolarFieldTemperatureUnits,SolarFieldTemperatureDifference
+3,624,156,510120,m²,817,m²,UTE CT Andasol-1,SKAL-ET,,,,,Flabeg,RP3,,,144,m,12,4,156,293,393,C,100
+4,624,156,510120,m²,817,m²,UTE CT Andasol-2,SKAL-ET,,,,,Flabeg,RP3,,,144,m,12,4,156,293,393,C,100
+5,768,96,352854,m²,NULL,,Acciona Solar,,,,,,Flabeg,RP2,,,NULL,,,8,96,293,393,C,NULL
+6,792,99,372240,m²,470,m²,Acciona Solar Power,SGNX-2,,,,,,,,,100,m,12,8,99,NULL,393,C,NULL
+7,624,156,510120,m²,817,m²,Cobra Instalaciones y Servicios,Senertrough,,,,,Flabeg,RP3,,,144,m,12,4,156,293,393,C,100
+8,624,156,510120,m²,817,m²,Cobra Instalaciones y Servicios,Senertrough,,,,,Flabeg,RP3,,,144,m,12,4,156,293,393,C,100
+9,792,99,372240,,470,m²,Acciona Solar Power,SGNX-2,,,,,,,,,100,m,12,8,99,NULL,393,C,NULL
+10,624,156,510120,m²,817,m²,UTE CT Extresol-1,SENERTROUGH,,,,,Flabeg,RP3,,,144,m,12,4,156,293,393,C,100
+11,624,156,510120,m²,817,m²,Cobra Instalaciones y Servicios,SENERTROUGH,,,,,Flabeg,RP3,,,144,m,12,4,156,293,393,C,100
+12,624,156,510120,m²,817,m²,Sener,SenerTrough,,,,,,,,,NULL,,,4,156,293,393,C,100
+13,624,156,510120,m²,817,m²,Sener,SenerTrough,,,,,,,,,NULL,,,4,156,293,393,C,100
+14,624,156,510120,m²,817,m²,Cobra Instalaciones y Servicios,SENERTROUGH,,,,,Flabeg,RP3,,,144,m,12,4,156,293,393,C,100
+16,792,99,372240,,470,m²,Acciona Solar Power,SGNX-2,,,,,,,,,100,m,12,8,99,NULL,393,C,NULL
+17,756,NULL,412020,m²,545,m²,Solel,,,,,,Solel,,,,95.2,m,,NULL,NULL,NULL,395,C,NULL
+18,352,88,287760,m²,NULL,,Iberdrola,Iberdrola Collector,,,,,Flabeg,,Rioglass,,NULL,,12,4,88,304,391,C,87
+19,54,9,31860,m²,590,m²,COMES,ENEA,,,,,Ronda Reflex,,,,100,m,8,6,9,290,550,C,260
+20,760,NULL,357200,m²,470,m²,Acciona Solar Power,SGX-2,,,,,Flabeg,,,,100,m,,8,NULL,318,393,C,75
+21,360,90,300000,m²,833,m²,Abengoa Solar,Astro,,,,,Rioglass,,,,150,m,,4,NULL,NULL,393,C,NULL
+22,360,90,300000,m²,833,m²,Abengoa Solar,Astro,,,,,Rioglass,,,,150,m,,4,NULL,NULL,393,C,NULL
+23,3232,808,2200000,m²,NULL,,Abengoa Solar,E2,,,,,,,,,NULL,,10,4,808,293,393,C,NULL
+24,24,3,10340,m²,NULL,,Starnet,LS-2,Second-generation parabolic trough collectors,,,,Flabeg,,,,97,m,12 and 8,8,3,248,572,F,324
+25,360,90,300000,m²,833,m²,Abengoa Solar,Astro,,,,,Rioglass,,,,150,m,,4,NULL,NULL,393,C,NULL
+26,672,168,552750,m²,822,m²,Ingemetal,SAMCA-Trough,,,,,Rioglass,,,,150,m,12,4,168,298,393,C,95
+27,672,168,552750,m²,822,m²,Ingemetal,SAMCA-Trough,,,,,Rioglass,,,,150,m,12,4,168,298,393,C,95
+28,NULL,NULL,82960,m²,NULL,m²,Luz,LS-1,Parabolic trough SCA,,,,,,,,NULL,,,NULL,NULL,NULL,307,C,NULL
+29,NULL,NULL,190338,m²,NULL,m²,Luz,LS-1,Parabolic trough SCA,,,,,,,,NULL,,,NULL,NULL,NULL,316,C,NULL
+30,NULL,NULL,230300,m²,NULL,m²,Luz,LS-2,Parabolic trough SCA,,,,,,,,NULL,,,NULL,NULL,NULL,349,C,NULL
+31,NULL,NULL,230300,m²,NULL,m²,Luz,LS-2,Parabolic trough SCA,,,,,,,,NULL,,,NULL,NULL,NULL,349,C,NULL
+32,NULL,NULL,250500,m²,NULL,m²,Luz,LS-2,Parabolic trough SCA,,,,,,,,NULL,,,NULL,NULL,NULL,349,C,NULL
+33,NULL,NULL,188000,m²,NULL,m²,Luz,LS-2,Parabolic trough SCA,,,,,,,,NULL,,,NULL,NULL,NULL,390,C,NULL
+34,NULL,NULL,194280,m²,NULL,m²,Luz,LS-2,Parabolic trough SCA,,,,,,,,NULL,,,NULL,NULL,NULL,390,C,NULL
+35,NULL,NULL,464340,m²,NULL,m²,Luz,LS-3,Parabolic trough SCA,,,,,,,,NULL,,,NULL,NULL,NULL,390,C,NULL
+36,NULL,NULL,483960,m²,NULL,m²,Luz,LS-3,Parabolic trough SCA,,,,,,,,NULL,,,NULL,NULL,NULL,390,C,NULL
+43,224,56,183120,m²,NULL,,Abengoa Solar,ASTR-Ø,,,,,Rioglass,,,,150,m,,4,56,NULL,393,C,NULL
+44,224,56,183860,m²,NULL,,Abengoa Solar,ASTR-Ø,,,,,Rioglass,,,,150,m,,4,56,293,393,C,NULL
+47,360,90,300000,m²,NULL,,Abengoa Solar,ASTRØ,,,,,,,,,150,m,12,4,90,293,393,C,100
+48,360,90,300000,m²,NULL,,Abengoa Solar,ASTRØ,,,,,,,,,150,m,12,4,360,293,393,C,100
+50,NULL,156,518469,m&sup2;,865,m&sup2;,NULL,SKALET 150,NULL,NULL,NULL,NULL,Flabeg,NULL,NULL,NULL,150,m,12,4,156,296,393,C,97
+51,NULL,NULL,1450000,m²,1386,ft²,,Helio-Trough,Solar Collector Element length is 63 ft (~19 m),,,,,,,,630,ft,,NULL,NULL,NULL,NULL,,NULL
+52,NULL,NULL,1400000,m&sup2;,1386,ft&sup2;,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,63,ft,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+53,NULL,NULL,1450000,m&sup2;,1386,ft&sup2;,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,63,ft,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+54,1840,460,NULL,,NULL,,Sener,SenerTrough,,,,,Flabeg,RP3,,,NULL,,,4,460,NULL,740,F,NULL
+57,NULL,NULL,NULL,,NULL,,Abengoa Solar,,,,,,Rioglass,,,,NULL,,,NULL,NULL,NULL,NULL,C,NULL
+65,160,40,130800,m²,NULL,,Flagsol,SKAL-ET,,,,,Flabeg,RP3,,,NULL,,12,4,40,293,393,C,NULL
+69,768,192,627840,m²,NULL,,Abengoa Solar,ASTRO,,,,,Flabeg,RP3,,,150,m,12,4,192,300,400,,NULL
+71,1008,NULL,NULL,,NULL,,Sopogy,SopoNova®,,,,,,,,,NULL,,,NULL,NULL,93,176,C,NULL
+75,8,4,6540,m²,817,m²,,,,,,,,,,,150,m,,2,4,190,300,C,NULL
+78,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+79,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+84,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+88,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+104,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+105,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+113,NULL,NULL,NULL,m²,NULL,ft²,,,,,,,,,,,NULL,ft,,NULL,NULL,NULL,NULL,,NULL
+117,624,156,510120,m²,817,m²,Flagsol,SKAL-ET 150,,,,,Rioglass,,,,150,m,12,4,156,293,393,C,100
+134,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+135,104,26,85000,m²,NULL,,Abengoa Solar,ASTRO,,,,,Rioglass,,,,150,m,,4,26,NULL,NULL,,NULL
+197,NULL,NULL,1450000,m²,1386,ft²,,Helio-Trough,Solar Collector Element length is 63 ft (~19 m),,,,,,,,630,ft,,NULL,NULL,NULL,NULL,,NULL
+207,86,19,45000,m²,NULL,,Solarlite GmbH,SL 4600,,,,,Guardian & AGC,,,,120,m,10,NULL,19,201,340,C,NULL
+210,360,90,300000,m²,NULL,,Abengoa Solar,ASTRØ,,,,,,,,,150,m,12,4,NULL,293,393,C,100
+212,360,90,300000,m²,NULL,,Abengoa Solar,ASTRØ,,,,,,,,,150,m,12,4,NULL,293,393,C,100
+215,624,156,510120,m²,817,m²,Sener,SenerTrough,,,,,Flabeg,RP3,,,150,m,12,4,156,293,393,C,100
+216,480,120,392400,m²,NULL,,Sener,SenerTrough,,,,,,,,,150,m,12,4,NULL,293,393,C,100
+217,624,156,510120,m²,817,m²,Sener,SenerTrough,,,,,Flabeg,RP3,,,150,m,12,4,156,293,393,C,100
+223,360,90,300000,m²,NULL,,Abengoa Solar,ASTRØ,,,,,,,,,150,m,12,4,NULL,293,393,C,100
+224,360,90,300000,m²,NULL,,Abengoa Solar,ASTRØ,,,,,,,,,150,m,12,4,NULL,293,393,C,100
+227,464,116,380000,m²,NULL,,,,,,,,,,,,NULL,,,4,NULL,293,393,C,100
+228,738,123,402210,m²,545,m²,Siemens,SunField 6,,,,,Saint Gobain,,,,96,m,,6,123,293,393,C,100
+229,624,156,510120,m²,817,m²,Flagsol,SKAL-ET 150,,,,,,,,,148.5,,12,4,NULL,293,393,C,100
+230,360,90,300000,m²,NULL,,Abengoa,ASTRØ,,,,,,,,,150,m,12,4,NULL,293,393,,100
+231,360,90,300000,m²,NULL,,Abengoa,ASTRØ,,,,,,,,,150,m,12,4,NULL,293,393,C,100
+232,360,90,300000,m²,NULL,,Abengoa,ASTRØ,,,,,,,,,150,m,12,4,NULL,293,393,C,100
+233,360,90,300000,m²,NULL,,Abengoa,ASTRØ,,,,,,,,,150,m,12,4,NULL,293,393,C,100
+234,420,105,339506,m²,NULL,,Sener,SenerTrough,,,,,Flabeg,RP3,,,150,m,12,4,105,293,393,C,100
+235,384,96,310406,m²,817,m²,Sener,SenerTrough,,,,,Flabeg,RP3,,,150,m,12,4,96,293,393,C,100
+236,672,168,550000,m²,NULL,,Sener,SenerTrough,,,,,,,,,150,,12,4,168,293,393,C,100
+237,416,124,405500,m²,NULL,,Sener,SENERtrough,,,,,,,,,NULL,,,NULL,124,293,393,C,100
+238,640,160,523200,m²,817,m²,Sener,SENERtrough,,,,,Flabeg,RP3,,,NULL,,,4,160,293,393,C,NULL
+239,640,160,523200,m²,817,m²,Sener,SENERtrough,,,,,Flabeg,RP3,,,NULL,,,4,160,293,393,C,NULL
+240,624,156,510120,m²,817,m²,Sener,SENERtrough,,,,,Flabeg,RP3,,,144,m,12,4,156,293,393,C,NULL
+241,936,156,510120,m²,545,m²,Siemens,SunField 6,,,,,,,,,96,m,,6,156,293,393,C,NULL
+242,336,56,183120,m²,545,m²,Siemens,SunField 6,,,,,,,,,96,m,8,6,56,293,393,C,NULL
+245,1200,300,800000,m²,NULL,,Abengoa Solar,E2,,,,,Rioglass,,,,NULL,,10,4,300,NULL,NULL,,NULL
+247,480,120,392400,m²,817,m²,EuroTrough,ET 150,,,,,Flabeg,RP3,,,144,m,12,4,120,293,390,C,NULL
+252,5376,1344,NULL,,NULL,,,,,,,,,,,,NULL,,,4,1344,293,393,C,NULL
+254,NULL,NULL,NULL,,NULL,,Ener-t International Ltd,ES-3.5,,,,,Rioglass,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+258,NULL,290,NULL,,NULL,,SENERtrough,SNT0,,,,,,,,,NULL,,,NULL,290,NULL,NULL,,NULL
+260,NULL,290,NULL,,NULL,,SENERtrough,SNT0,,,,,,,,,NULL,,,NULL,290,NULL,NULL,,NULL
+263,400,100,326800,m²,817,m²,EuroTrough,ET-150,,,,,Flabeg,RP-3,,,144,m,12,4,100,293,393,C,NULL
+264,448,112,366240,m²,817,m²,Albiasa,AT-150,,,,,,,,,150,m,12,4,112,293,393,C,NULL
+267,1136,142,464908,m²,NULL,,Gossamer Space Frames,LAT 1,,,,,,,,,72,m,6,8,142,NULL,NULL,,NULL
+270,NULL,NULL,NULL,,NULL,,Sener,SenerTrough,,,,,"FE GmbH (formerly Flabeg GmbH, Germany)","Rp3, annealed",,,NULL,,,NULL,NULL,293,393,C,NULL
+271,NULL,180,588600,m²,NULL,,Sener,SenerTrough,,,,,"FE GmbH (formerly Flabeg GmbH, Germany)","Rp3, annealed",,,NULL,,,NULL,NULL,293,393,C,NULL
+273,3,1,6159,m²,2053,m²,Airlight Energy,,,,,,Airlight Energy,Pneumatic mirror,,,215,m,12,3,1,270,570,C,NULL
+274,624,156,510120,m²,817,m²,Sener,SenerTrough,,,,,Flabeg,RP3,,,144,m,12,4,156,293,393,C,NULL
+275,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+276,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+278,8,2,5248,m²,656,m²,SkyFuel,SkyTrough®,,,,,,,,,115,m,,4,2,NULL,NULL,,NULL
+279,12,3,8000,m²,NULL,,Shrijee Structures,,,,,,Rioglass,,,,120,m,10,4,3,293,393,C,NULL
+4279,NULL,NULL,NULL,,656,m²,SkyFuel,SkyTrough®,,,,,SkyFuel,ReflecTech®,,,115,m,8,NULL,NULL,NULL,NULL,,NULL
+4285,6,1,3398,m²,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,290,550,C,NULL
+4290,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,293,393,C,NULL
+4291,1064,266,869800,m²,NULL,,Sener,SENERtrough®,,,,,,,,,NULL,,,4,266,293,393,C,NULL
+4292,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,293,393,C,NULL
+4294,NULL,190,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,190,293,393,C,NULL
+4296,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+4300,NULL,NULL,NULL,,NULL,,Flabeg,Ultimate Trough,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+5305,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+5306,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+5307,NULL,192,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+5308,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+5309,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+5310,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+7315,NULL,NULL,NULL,,NULL,,,,,,,,,,,,NULL,,,NULL,NULL,NULL,NULL,,NULL
+8316,40,10,26929,m²,674,m²,Aalborg CSP,,,,,,,,,,125,m,10,4,NULL,252,312,C,NULL
