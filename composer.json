@@ -36,6 +36,7 @@
     }
   },
   "require": {
+    "nrel/communications": "^1.1.1.18",
     "drupal/Conditional_fields": "^1.0@alpha",
     "drupal/Radix_layouts": "^4.0",
     "drupal/field_collection": "^1.0@alpha",
