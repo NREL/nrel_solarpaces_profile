@@ -23,17 +23,26 @@
     "bin-dir": "bin/"
   },
   "extra": {
-    "packagist.drupal-composer.org": {
-      "discover-make-files": false
-    },
-    "installer-paths": {
-      "docroot/core": [
-        "type:drupal-core"
+      "installer-types": [
+          "bower-asset",
+          "npm-asset"
       ],
-      "modules/contrib/{$name}": [
-        "type:drupal-module"
-      ]
-    }
+      "packagist.drupal-composer.org": {
+          "discover-make-files": false
+      },
+      "installer-paths": {
+          "docroot/core": [
+              "type:drupal-core"
+          ],
+          "docroot/libraries/{$name}": [
+              "type:drupal-library",
+              "type:bower-asset",
+              "type:npm-asset"
+          ],
+          "docroot/profiles/contrib/{$name}": [
+              "type:drupal-module"
+          ]
+      }
   },
   "require": {
     "nrel/communications": "^1.1.1.18",
