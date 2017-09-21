@@ -1,5 +1,5 @@
 {
-  "name": "fruition/nrel_solarpaces_profile",
+  "name": "NREL/nrel_solarpaces_profile",
   "description": "Custom profile for the NREL SolarPaces project. Built by Fruition.net.",
   "type": "drupal-profile",
   "homepage": "https://fruition.net",
@@ -13,6 +13,9 @@
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "require-dev": {
+      "drupal/stage_file_proxy": "^1.0@alpha"
+  },
   "repositories": [
     {
       "type": "composer",
@@ -39,8 +42,14 @@
               "type:bower-asset",
               "type:npm-asset"
           ],
-          "docroot/profiles/contrib/{$name}": [
+          "docroot/modules/contrib/{$name}": [
               "type:drupal-module"
+          ],
+          "docroot/profiles/contrib/{$name}": [
+              "type:drupal-profile"
+          ],
+          "docroot/themes/contrib/{$name}": [
+              "type:drupal-theme"
           ]
       }
   },
