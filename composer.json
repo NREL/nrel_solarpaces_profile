@@ -1,5 +1,5 @@
 {
-  "name": "NREL/nrel_solarpaces_profile",
+  "name": "nrel/nrel_solarpaces_profile",
   "description": "Custom profile for the NREL SolarPaces project. Built by Fruition.net.",
   "type": "drupal-profile",
   "homepage": "https://fruition.net",
