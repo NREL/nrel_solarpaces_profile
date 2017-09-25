@@ -20,6 +20,10 @@
     {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
     }
   ],
   "config": {
@@ -55,10 +59,10 @@
   },
   "require": {
     "nrel/communications": "^1.1.1.18",
-    "drupal/Conditional_fields": "^1.0@alpha",
-    "drupal/Radix_layouts": "^4.0",
+    "drupal/conditional_fields": "^1.0@alpha",
+    "drupal/radix_layouts": "^4.0",
     "drupal/field_collection": "^1.0@alpha",
-    "Drupal/node_clone": "1.x-dev",
+    "drupal/node_clone": "1.x-dev",
     "drupal/default_content": "^1.0@alpha",
     "drupal/redirect": "^1.0@beta",
     "drupal/paragraphs": "^1.1"
