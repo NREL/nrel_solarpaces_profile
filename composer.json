@@ -10,11 +10,17 @@
       "role": "Maintainer"
     }
   ],
+  "support": {
+      "issues": "https://github.com/NREL/nrel_solarpaces_profile/issues"
+  },
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require-dev": {
       "drupal/stage_file_proxy": "^1.0@alpha"
+  },
+  "config": {
+    "bin-dir": "bin/"
   },
   "repositories": [
     {
@@ -26,17 +32,11 @@
         "url": "https://asset-packagist.org"
     }
   ],
-  "config": {
-    "bin-dir": "bin/"
-  },
   "extra": {
       "installer-types": [
           "bower-asset",
           "npm-asset"
       ],
-      "packagist.drupal-composer.org": {
-          "discover-make-files": false
-      },
       "installer-paths": {
           "docroot/core": [
               "type:drupal-core"
@@ -57,6 +57,8 @@
           ]
       }
   },
+  "patches": {
+  },
   "require": {
     "nrel/communications": "^1.1.1.18",
     "drupal/radix_layouts": "^4.0",
@@ -64,6 +66,7 @@
     "drupal/node_clone": "1.x-dev",
     "drupal/default_content": "^1.0@alpha",
     "drupal/redirect": "^1.0@beta",
-    "drupal/paragraphs": "^1.1"
+    "drupal/paragraphs": "^1.1",
+    "drupal/conditional_fields": "^1.0@alpha"
   }
 }
