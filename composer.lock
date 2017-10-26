@@ -5382,6 +5382,48 @@
             "time": "2016-10-21T00:15:27+00:00"
         },
         {
+            "name": "drupal/noopener_filter",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/noopener_filter",
+                "reference": "06a95dee474a9cdc9bfff77828ea818b1384391a"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1494510185",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Listerical",
+                    "homepage": "https://www.drupal.org/user/3372386"
+                }
+            ],
+            "description": "Provides a filter to add rel=\"noopener\" to links in the ckeditor",
+            "homepage": "https://www.drupal.org/project/noopener_filter",
+            "support": {
+                "source": "http://cgit.drupalcode.org/noopener_filter"
+            },
+            "time": "2017-05-11T13:40:23+00:00"
+        },
+        {
             "name": "drupal/openapi",
             "version": "1.0.0-alpha1",
             "source": {
@@ -8932,16 +8974,16 @@
         },
         {
             "name": "nrel/communications",
-            "version": "1.1.1.29",
+            "version": "1.1.1.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NREL/communications.git",
-                "reference": "b18c653d19bc7dce4ca40b4f6467fa7a96863093"
+                "reference": "23e2a13e2d73898246a33efe670028f814f0480e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NREL/communications/zipball/b18c653d19bc7dce4ca40b4f6467fa7a96863093",
-                "reference": "b18c653d19bc7dce4ca40b4f6467fa7a96863093",
+                "url": "https://api.github.com/repos/NREL/communications/zipball/23e2a13e2d73898246a33efe670028f814f0480e",
+                "reference": "23e2a13e2d73898246a33efe670028f814f0480e",
                 "shasum": ""
             },
             "require": {
@@ -8976,6 +9018,7 @@
                 "drupal/menu_link_weight": "~1.0@beta",
                 "drupal/monolog": "^1.0@alpha",
                 "drupal/multiversion": "^1.0@beta",
+                "drupal/noopener_filter": "1.x-dev",
                 "drupal/password_policy": "^3.0@alpha",
                 "drupal/recreate_block_content": "^1.0",
                 "drupal/relaxed": "^1.0@beta",
@@ -9049,7 +9092,7 @@
             ],
             "description": "Communications profile is the de-facto Drupal swiss army knife for NREL sites.",
             "homepage": "https://github.com/NREL/communications",
-            "time": "2017-10-26T17:22:42+00:00"
+            "time": "2017-10-26T19:26:34+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
