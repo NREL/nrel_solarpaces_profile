@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5eb0e122bed4edb442f8a79fee18cb0c",
+    "content-hash": "e9b50a130d5ebbab72f7e23273d9206a",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -9259,20 +9259,20 @@
         },
         {
             "name": "nrel/communications",
-            "version": "1.1.1.33",
+            "version": "1.1.1.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NREL/communications.git",
-                "reference": "63ef42bf6088cc210c24d376ff138dcd7b70543e"
+                "reference": "6d330435cd3c1ba8c11803542846aaf5212dfeae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NREL/communications/zipball/63ef42bf6088cc210c24d376ff138dcd7b70543e",
-                "reference": "63ef42bf6088cc210c24d376ff138dcd7b70543e",
+                "url": "https://api.github.com/repos/NREL/communications/zipball/6d330435cd3c1ba8c11803542846aaf5212dfeae",
+                "reference": "6d330435cd3c1ba8c11803542846aaf5212dfeae",
                 "shasum": ""
             },
             "require": {
-                "acquia/lightning": "^2.1.8",
+                "acquia/lightning": "^2.2.0",
                 "aws/aws-sdk-php": "^3.31",
                 "behat/mink-zombie-driver": "^1.4",
                 "components/highlightjs": "9.7.*",
@@ -9283,6 +9283,7 @@
                 "drupal/bootstrap": "~3.5",
                 "drupal/coffee": "~1.0@beta",
                 "drupal/config_pages": "~2.0@RC",
+                "drupal/core": "~8.4.0",
                 "drupal/cshs": "~1.0@beta",
                 "drupal/drupalmoduleupgrader": "^1.2",
                 "drupal/eck": "~1.0@alpha",
@@ -9379,7 +9380,7 @@
             ],
             "description": "Communications profile is the de-facto Drupal swiss army knife for NREL sites.",
             "homepage": "https://github.com/NREL/communications",
-            "time": "2017-11-13T17:02:10+00:00"
+            "time": "2017-11-13T18:24:00+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
