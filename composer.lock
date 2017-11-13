@@ -9263,12 +9263,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NREL/communications.git",
-                "reference": "6d330435cd3c1ba8c11803542846aaf5212dfeae"
+                "reference": "00238ff941ec7b950eca9abc8ecd4259af1d7186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NREL/communications/zipball/6d330435cd3c1ba8c11803542846aaf5212dfeae",
-                "reference": "6d330435cd3c1ba8c11803542846aaf5212dfeae",
+                "url": "https://api.github.com/repos/NREL/communications/zipball/00238ff941ec7b950eca9abc8ecd4259af1d7186",
+                "reference": "00238ff941ec7b950eca9abc8ecd4259af1d7186",
                 "shasum": ""
             },
             "require": {
@@ -10533,7 +10533,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v3.3.11",
+            "version": "v3.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -10586,7 +10586,7 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v3.3.11",
+            "version": "v3.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
