@@ -9,7 +9,9 @@ dependencies:
   - ctools_block
   - datetime
   - default_content
+  - entity_reference_revisions
   - field
+  - field_formatter_class
   - field_group
   - file
   - help
@@ -17,6 +19,7 @@ dependencies:
   - link
   - menu_ui
   - node
+  - nrel_sp_project
   - options
   - panelizer
   - panels
