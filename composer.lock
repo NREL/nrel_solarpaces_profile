@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9b50a130d5ebbab72f7e23273d9206a",
+    "content-hash": "2fbdd93d82bb6dd6d3f84290ebcf35ba",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -220,16 +220,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.38.1",
+            "version": "3.38.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9f704274f4748d2039a16d45b3388ed8dde74e89"
+                "reference": "0dfe5513b48776bc7f8d5d6ec195ed3dc714cb96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9f704274f4748d2039a16d45b3388ed8dde74e89",
-                "reference": "9f704274f4748d2039a16d45b3388ed8dde74e89",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0dfe5513b48776bc7f8d5d6ec195ed3dc714cb96",
+                "reference": "0dfe5513b48776bc7f8d5d6ec195ed3dc714cb96",
                 "shasum": ""
             },
             "require": {
@@ -296,7 +296,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-11-09T19:15:59+00:00"
+            "time": "2017-11-15T19:04:10+00:00"
         },
         {
             "name": "behat/mink",
@@ -3095,29 +3095,22 @@
         },
         {
             "name": "drupal/drupalmoduleupgrader",
-            "version": "1.2.0",
+            "version": "dev-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/drupalmoduleupgrader",
-                "reference": "8.x-1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupalmoduleupgrader-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "b802ab4ecc4eb2f7726e3ecf8606e708c415f9ea"
+                "reference": "8bf2d9c140d4a315f267ff511fc69ea1595b62b8"
             },
             "require": {
                 "cebe/markdown": "1.0.*@dev",
                 "drupal/core": "~8.0",
                 "grom358/pharborist": "dev-master",
-                "symfony/filesystem": "2.6.*@dev",
-                "symfony/finder": "2.6.*@dev"
+                "symfony/filesystem": "^2.6.0",
+                "symfony/finder": "^2.6.0"
             },
             "require-dev": {
                 "mikey179/vfsstream": "^1.5",
-                "phpunit/phpunit": "^4.8",
-                "symfony/filesystem": "2.6.*@dev"
+                "phpunit/phpunit": "^4.8"
             },
             "type": "drupal-module",
             "extra": {
@@ -3125,11 +3118,11 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1443463739",
+                    "version": "8.x-1.2+10-dev",
+                    "datestamp": "1490462883",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3201,7 +3194,8 @@
             "support": {
                 "source": "https://drupal.org/project/drupalmoduleupgrader",
                 "issues": "https://drupal.org/project/issues/drupalmoduleupgrader"
-            }
+            },
+            "time": "2017-03-25T17:24:48+00:00"
         },
         {
             "name": "drupal/eck",
@@ -7592,7 +7586,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/vbo_export",
-                "reference": "3d90a4c60a6fb4c04640f0e139489684bea2f7a7"
+                "reference": "6d878005d2fb780e930ebc653655479412563f2f"
             },
             "require": {
                 "drupal/core": "*",
@@ -7604,11 +7598,11 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.x-dev",
-                    "datestamp": "1501001642",
+                    "version": "8.x-2.0-alpha+2-dev",
+                    "datestamp": "1510758484",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -7627,7 +7621,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/vbo_export"
             },
-            "time": "2017-09-13T13:54:43+00:00"
+            "time": "2017-11-15T15:07:16+00:00"
         },
         {
             "name": "drupal/video_embed_field",
@@ -7906,6 +7900,57 @@
                 "source": "http://cgit.drupalcode.org/workbench_moderation",
                 "issues": "http://drupal.org/project/issues/workbench_moderation"
             }
+        },
+        {
+            "name": "drush/config-extra",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drush-ops/config-extra.git",
+                "reference": "6bd3d5aa3ca7625115683f6e687285a3f1c48a54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drush-ops/config-extra/zipball/6bd3d5aa3ca7625115683f6e687285a3f1c48a54",
+                "reference": "6bd3d5aa3ca7625115683f6e687285a3f1c48a54",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=3.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Drush": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Moshe Weitzman",
+                    "email": "weitzman@tejasa.com"
+                },
+                {
+                    "name": "Greg Anderson",
+                    "email": "greg.1.anderson@greenknowe.org"
+                }
+            ],
+            "description": "Drush config-extra contains additional configuration Drush commands, notably config-merge.",
+            "keywords": [
+                "Drush"
+            ],
+            "time": "2015-10-16T21:32:27+00:00"
         },
         {
             "name": "easyrdf/easyrdf",
@@ -9259,20 +9304,20 @@
         },
         {
             "name": "nrel/communications",
-            "version": "1.1.1.34",
+            "version": "1.1.1.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NREL/communications.git",
-                "reference": "00238ff941ec7b950eca9abc8ecd4259af1d7186"
+                "reference": "c840023675ee15bc54181c6deda13bc80c4508c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NREL/communications/zipball/00238ff941ec7b950eca9abc8ecd4259af1d7186",
-                "reference": "00238ff941ec7b950eca9abc8ecd4259af1d7186",
+                "url": "https://api.github.com/repos/NREL/communications/zipball/c840023675ee15bc54181c6deda13bc80c4508c9",
+                "reference": "c840023675ee15bc54181c6deda13bc80c4508c9",
                 "shasum": ""
             },
             "require": {
-                "acquia/lightning": "^2.2.0",
+                "acquia/lightning": "~2.2.3",
                 "aws/aws-sdk-php": "^3.31",
                 "behat/mink-zombie-driver": "^1.4",
                 "components/highlightjs": "9.7.*",
@@ -9283,9 +9328,8 @@
                 "drupal/bootstrap": "~3.5",
                 "drupal/coffee": "~1.0@beta",
                 "drupal/config_pages": "~2.0@RC",
-                "drupal/core": "~8.4.0",
                 "drupal/cshs": "~1.0@beta",
-                "drupal/drupalmoduleupgrader": "^1.2",
+                "drupal/drupalmoduleupgrader": "1.x-dev",
                 "drupal/eck": "~1.0@alpha",
                 "drupal/elasticsearch_helper": "5.x-dev",
                 "drupal/entity_browser_enhanced": "^1.0@beta",
@@ -9325,6 +9369,7 @@
                 "drupal/url_embed": "^1.0@alpha",
                 "drupal/vbo_export": "2.x-dev",
                 "drupal/views_bulk_operations": "^1.0@alpha",
+                "drush/config-extra": "^1.0",
                 "elasticsearch/elasticsearch": "^5.2",
                 "guzzlehttp/guzzle": "^6.3",
                 "jsq/amazon-es-php": "^0.2.0",
@@ -9380,7 +9425,7 @@
             ],
             "description": "Communications profile is the de-facto Drupal swiss army knife for NREL sites.",
             "homepage": "https://github.com/NREL/communications",
-            "time": "2017-11-13T18:24:00+00:00"
+            "time": "2017-11-15T19:36:14+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
@@ -10765,35 +10810,34 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.6.13",
-            "target-dir": "Symfony/Component/Filesystem",
+            "version": "v2.8.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "823c035b1a5c13a4924e324d016eb07e70f94735"
+                "reference": "10507c5f24577b0ad971b0d22097c823b2b45dd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/823c035b1a5c13a4924e324d016eb07e70f94735",
-                "reference": "823c035b1a5c13a4924e324d016eb07e70f94735",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/10507c5f24577b0ad971b0d22097c823b2b45dd3",
+                "reference": "10507c5f24577b0ad971b0d22097c823b2b45dd3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7"
+                "php": ">=5.3.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Component\\Filesystem\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -10811,39 +10855,38 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-08T05:59:48+00:00"
+            "time": "2017-11-07T14:08:47+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.6.13",
-            "target-dir": "Symfony/Component/Finder",
+            "version": "v2.8.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "203a10f928ae30176deeba33512999233181dd28"
+                "reference": "efeceae6a05a9b2fcb3391333f1d4a828ff44ab8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/203a10f928ae30176deeba33512999233181dd28",
-                "reference": "203a10f928ae30176deeba33512999233181dd28",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/efeceae6a05a9b2fcb3391333f1d4a828ff44ab8",
+                "reference": "efeceae6a05a9b2fcb3391333f1d4a828ff44ab8",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7"
+                "php": ">=5.3.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Component\\Finder\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -10861,7 +10904,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-09T16:02:48+00:00"
+            "time": "2017-11-05T15:25:56+00:00"
         },
         {
             "name": "symfony/http-foundation",
