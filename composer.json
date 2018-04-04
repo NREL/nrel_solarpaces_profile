@@ -64,7 +64,7 @@
   "patches": {
   },
   "require": {
-    "nrel/communications": "1.2.1",
+    "nrel/communications": "2.2.3.1",
     "drupal/radix_layouts": "^4.0",
     "drupal/field_collection": "^1.0@alpha",
     "drupal/node_clone": "1.x-dev",

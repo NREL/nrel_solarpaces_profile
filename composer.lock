@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "26254bd367c4d9e8317ef4cfea20f538",
+    "content-hash": "e4f70756e3c4525efde46c6e257dc09c",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -9502,16 +9502,16 @@
         },
         {
             "name": "nrel/communications",
-            "version": "1.2.1",
+            "version": "2.2.3.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:NREL/communications.git",
-                "reference": "57ea2c4f7592b1b8b46cedabbdcbd08c7997745d"
+                "reference": "9984daa6c565a07d1b091c39f9be2f12d65b3bf6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NREL/communications/zipball/57ea2c4f7592b1b8b46cedabbdcbd08c7997745d",
-                "reference": "57ea2c4f7592b1b8b46cedabbdcbd08c7997745d",
+                "url": "https://api.github.com/repos/NREL/communications/zipball/9984daa6c565a07d1b091c39f9be2f12d65b3bf6",
+                "reference": "9984daa6c565a07d1b091c39f9be2f12d65b3bf6",
                 "shasum": ""
             },
             "require": {
@@ -9624,9 +9624,9 @@
             "homepage": "https://github.com/NREL/communications",
             "support": {
                 "issues": "https://github.com/NREL/communications/issues",
-                "source": "https://github.com/NREL/communications/tree/1.2.1"
+                "source": "https://github.com/NREL/communications/tree/2.2.3.1"
             },
-            "time": "2018-02-28T21:26:28+00:00"
+            "time": "2018-04-04T17:35:01+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
