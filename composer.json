@@ -19,19 +19,23 @@
   "require-dev": {
       "drupal/stage_file_proxy": "^1.0@alpha"
   },
-  "config": {
-    "bin-dir": "bin/"
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packagist.test"
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "config": {
+        "secure-http": false
     },
-    {
-        "type": "composer",
-        "url": "https://asset-packagist.org"
-    }
-  ],
   "extra": {
       "installer-types": [
           "bower-asset",
@@ -60,7 +64,7 @@
   "patches": {
   },
   "require": {
-    "nrel/communications": "^1.1.1.36",
+    "nrel/communications": "^2.2.4",
     "drupal/radix_layouts": "^4.0",
     "drupal/field_collection": "^1.0@alpha",
     "drupal/node_clone": "1.x-dev",
