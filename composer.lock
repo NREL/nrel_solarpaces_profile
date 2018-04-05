@@ -4,31 +4,31 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b0cc67b3d2f52dcd8969b82ba0f0d83",
+    "content-hash": "d9b17a7ae65f126395dd997a98051f80",
     "packages": [
         {
             "name": "acquia/lightning",
-            "version": "2.2.4",
+            "version": "2.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/lightning.git",
-                "reference": "da581c8eb076df90cef4cdb2b6b7da5d88fe85aa"
+                "reference": "2787e1ed1dfaba58462d2e8280db5e06fe9d195e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/lightning/zipball/da581c8eb076df90cef4cdb2b6b7da5d88fe85aa",
-                "reference": "da581c8eb076df90cef4cdb2b6b7da5d88fe85aa",
+                "url": "https://api.github.com/repos/acquia/lightning/zipball/2787e1ed1dfaba58462d2e8280db5e06fe9d195e",
+                "reference": "2787e1ed1dfaba58462d2e8280db5e06fe9d195e",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/cropper": "^2.3",
                 "bower-asset/dropzone": "^5.1",
-                "cweagans/composer-patches": "^1.5.0",
+                "cweagans/composer-patches": "^1.6.4",
                 "drupal-composer/drupal-scaffold": "^2.0.0",
                 "drupal/acquia_connector": "^1.1",
-                "drupal/config_update": "^1.1",
+                "drupal/config_update": "^1.5.0",
                 "drupal/contact_storage": "^1.0",
-                "drupal/core": "~8.4.1",
+                "drupal/core": "~8.4.3",
                 "drupal/crop": "2.0.0-beta1",
                 "drupal/ctools": "^3.0",
                 "drupal/diff": "^1.0",
@@ -68,7 +68,7 @@
                 "composer/composer": "^1.4",
                 "consolidation/robo": "1.1.4",
                 "drupal/coder": "~8.2.0",
-                "drupal/console": "1.0.1",
+                "drupal/console": "^1.0.0",
                 "drupal/devel": "^1.0",
                 "drupal/drupal-extension": "~3.3.0",
                 "drupal/media_entity_generic": "1.x-dev",
@@ -113,12 +113,11 @@
                         "2749503 - Add basic support for Quick Edit": "https://www.drupal.org/files/issues/workbench_moderation-quickedit-support-2749503-6.patch"
                     },
                     "drupal/core": {
-                        "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/1356276-408--8.4.x.patch",
+                        "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/1356276-408--8.4.3.patch",
                         "2880374 - Experimental modules should not have warnings after being installed": "https://www.drupal.org/files/issues/2880374-remove-experimental-warnings-6.patch",
                         "2880445 - Config sync should not throw a warning when not being writable": "https://www.drupal.org/files/issues/2880445-remove-config-write-warning-2.patch",
                         "2869592 - Disabled update module shouldn't produce a status report warning": "https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch",
                         "2885441 - EntityReferenceAutocompleteWidget should define its size setting as an integer": "https://www.drupal.org/files/issues/2885441-2.patch",
-                        "2912298 - Make media name available on manage display": "https://www.drupal.org/files/issues/core-media-add-name-to-display-2912298-25.patch",
                         "2883813 - Move File/Image media type into Standard once Media is stable": "https://www.drupal.org/files/issues/2883813-27.patch",
                         "2877383 - Add action support to Media module": "https://www.drupal.org/files/issues/2877383-23.patch",
                         "2862041 - Provide useful Views filters for Content Moderation State fields": "https://www.drupal.org/files/issues/2862041-229.patch",
@@ -169,7 +168,7 @@
                 "GPL-2.0+"
             ],
             "description": "The best of Drupal, curated by Acquia",
-            "time": "2017-12-06T15:05:57+00:00"
+            "time": "2017-12-07T19:16:39+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -9584,20 +9583,20 @@
         },
         {
             "name": "nrel/communications",
-            "version": "2.2.4.1",
+            "version": "2.2.5.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:NREL/communications.git",
-                "reference": "b13158a6b627531317f8890cf6a22df834424b94"
+                "reference": "837a742b02e7c855333e07d18e5604c68981aa1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NREL/communications/zipball/b13158a6b627531317f8890cf6a22df834424b94",
-                "reference": "b13158a6b627531317f8890cf6a22df834424b94",
+                "url": "https://api.github.com/repos/NREL/communications/zipball/837a742b02e7c855333e07d18e5604c68981aa1b",
+                "reference": "837a742b02e7c855333e07d18e5604c68981aa1b",
                 "shasum": ""
             },
             "require": {
-                "acquia/lightning": "2.2.4",
+                "acquia/lightning": "2.2.5",
                 "aws/aws-sdk-php": "^3.31",
                 "behat/mink-zombie-driver": "^1.4",
                 "components/highlightjs": "9.7.*",
@@ -9706,9 +9705,9 @@
             "homepage": "https://github.com/NREL/communications",
             "support": {
                 "issues": "https://github.com/NREL/communications/issues",
-                "source": "https://github.com/NREL/communications/tree/2.2.4.1"
+                "source": "https://github.com/NREL/communications/tree/2.2.5.1"
             },
-            "time": "2018-04-05T13:28:27+00:00"
+            "time": "2018-04-05T17:13:40+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
