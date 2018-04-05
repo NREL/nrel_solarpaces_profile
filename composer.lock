@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9b17a7ae65f126395dd997a98051f80",
+    "content-hash": "b97f7bc564d468716e3ea26e76265a44",
     "packages": [
         {
             "name": "acquia/lightning",
-            "version": "2.2.5",
+            "version": "2.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/lightning.git",
-                "reference": "2787e1ed1dfaba58462d2e8280db5e06fe9d195e"
+                "reference": "eab197f1b624aa3260a2b51dc45fd9d8c79cc540"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/lightning/zipball/2787e1ed1dfaba58462d2e8280db5e06fe9d195e",
-                "reference": "2787e1ed1dfaba58462d2e8280db5e06fe9d195e",
+                "url": "https://api.github.com/repos/acquia/lightning/zipball/eab197f1b624aa3260a2b51dc45fd9d8c79cc540",
+                "reference": "eab197f1b624aa3260a2b51dc45fd9d8c79cc540",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
                 "drupal/crop": "2.0.0-beta1",
                 "drupal/ctools": "^3.0",
                 "drupal/diff": "^1.0",
-                "drupal/dropzonejs": "2.0.0-alpha2",
+                "drupal/dropzonejs": "2.0.0-alpha3",
                 "drupal/embed": "^1.0",
                 "drupal/entity_block": "1.0.0-alpha2",
                 "drupal/entity_browser": "2.0.0-alpha2",
@@ -40,8 +40,8 @@
                 "drupal/features": "^3.0",
                 "drupal/image_widget_crop": "^2.1",
                 "drupal/inline_entity_form": "^1.0",
-                "drupal/jsonapi": "^1.1",
-                "drupal/media_entity": "2.0.0-alpha1",
+                "drupal/jsonapi": "^1.4.0",
+                "drupal/media_entity": "2.0.0-alpha2",
                 "drupal/media_entity_document": "1.x-dev",
                 "drupal/media_entity_image": "1.x-dev",
                 "drupal/media_entity_instagram": "2.0.0-alpha1",
@@ -53,9 +53,9 @@
                 "drupal/pathauto": "^1.0",
                 "drupal/scheduled_updates": "1.0.0-alpha6",
                 "drupal/search_api": "^1.0",
-                "drupal/simple_oauth": "3.0.0",
+                "drupal/simple_oauth": "3.3.0",
                 "drupal/token": "^1.0",
-                "drupal/video_embed_field": "2.0.0-alpha1",
+                "drupal/video_embed_field": "2.0.0-alpha2",
                 "drupal/views_infinite_scroll": "^1.1",
                 "drupal/wbm2cm": "dev-2.x",
                 "drupal/workbench_moderation": "1.2.0",
@@ -138,7 +138,8 @@
                         "2878684 - Use String.match to correlate regions when switching Layouts in Panels IPE": "https://www.drupal.org/files/issues/panels-ipe-2878684-3.patch",
                         "2825034 - Form error messages do not appear in IPE": "https://www.drupal.org/files/issues/panels-ipe-propogate-errors-2825034-5.patch",
                         "2908897 - CategoryView leaves AJAX request marked active": "https://www.drupal.org/files/issues/2908897-2.patch",
-                        "2913353 - IPE attaches behaviors a bit too quickly": "https://www.drupal.org/files/issues/2913353-2.patch"
+                        "2913353 - IPE attaches behaviors a bit too quickly": "https://www.drupal.org/files/issues/2913353-2.patch",
+                        "2825028 - AJAX error creating and placing blocks with date fields in IPE": "https://www.drupal.org/files/issues/panels-ipe-date-field-2825028-10.patch"
                     },
                     "drupal/panelizer": {
                         "2908917 - SaveTabView blindly assumes a Revert tab exists": "https://www.drupal.org/files/issues/2908917-2.patch"
@@ -168,7 +169,7 @@
                 "GPL-2.0+"
             ],
             "description": "The best of Drupal, curated by Acquia",
-            "time": "2017-12-07T19:16:39+00:00"
+            "time": "2017-12-20T19:49:05+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -224,16 +225,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.54.0",
+            "version": "3.54.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "86d1892b41381b77070acb199a57097c71b0f124"
+                "reference": "421118dc7a7d01520e13917a86179c9cbe6934b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/86d1892b41381b77070acb199a57097c71b0f124",
-                "reference": "86d1892b41381b77070acb199a57097c71b0f124",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/421118dc7a7d01520e13917a86179c9cbe6934b2",
+                "reference": "421118dc7a7d01520e13917a86179c9cbe6934b2",
                 "shasum": ""
             },
             "require": {
@@ -300,7 +301,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-04-04T18:22:54+00:00"
+            "time": "2018-04-05T19:28:11+00:00"
         },
         {
             "name": "behat/mink",
@@ -2993,17 +2994,17 @@
         },
         {
             "name": "drupal/dropzonejs",
-            "version": "2.0.0-alpha2",
+            "version": "2.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/dropzonejs",
-                "reference": "8.x-2.0-alpha2"
+                "reference": "8.x-2.0-alpha3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/dropzonejs-8.x-2.0-alpha2.zip",
-                "reference": "8.x-2.0-alpha2",
-                "shasum": "a8ea417764a08a19ee10311a90da0f02f6bec111"
+                "url": "https://ftp.drupal.org/files/projects/dropzonejs-8.x-2.0-alpha3.zip",
+                "reference": "8.x-2.0-alpha3",
+                "shasum": "a11f37e8f37b211d7065b0fd8adb1cc85b47e691"
             },
             "require": {
                 "drupal/core": "*"
@@ -3020,7 +3021,7 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-alpha2",
+                    "version": "8.x-2.0-alpha3",
                     "datestamp": "1513265285",
                     "security-coverage": {
                         "status": "not-covered",
@@ -3408,7 +3409,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1505895844",
+                    "datestamp": "1520873280",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -3471,7 +3472,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha2",
-                    "datestamp": "1484641084",
+                    "datestamp": "1513981984",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -3480,7 +3481,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -4839,17 +4840,17 @@
         },
         {
             "name": "drupal/media_entity",
-            "version": "2.0.0-alpha1",
+            "version": "2.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/media_entity",
-                "reference": "8.x-2.0-alpha1"
+                "reference": "8.x-2.0-alpha2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media_entity-8.x-2.0-alpha1.zip",
-                "reference": "8.x-2.0-alpha1",
-                "shasum": "c735c39c4715e802ad0b7f7aee7485a1f6bdbcbc"
+                "url": "https://ftp.drupal.org/files/projects/media_entity-8.x-2.0-alpha2.zip",
+                "reference": "8.x-2.0-alpha2",
+                "shasum": "6a24d7b3c77cc894c9d08e6e2a04bae162cc8007"
             },
             "require": {
                 "drupal/core": "*",
@@ -4861,8 +4862,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-alpha1",
-                    "datestamp": "1513267384",
+                    "version": "8.x-2.0-alpha2",
+                    "datestamp": "1515532385",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -6500,7 +6501,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -7118,17 +7119,17 @@
         },
         {
             "name": "drupal/simple_oauth",
-            "version": "3.0.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/simple_oauth",
-                "reference": "8.x-3.0"
+                "reference": "8.x-3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_oauth-8.x-3.0.zip",
-                "reference": "8.x-3.0",
-                "shasum": "2814802f824433bf14410edfea3283412c30713b"
+                "url": "https://ftp.drupal.org/files/projects/simple_oauth-8.x-3.3.zip",
+                "reference": "8.x-3.3",
+                "shasum": "08f6c732da67715e86e5fb76a95c77f55cb88e97"
             },
             "require": {
                 "drupal/consumers": "*",
@@ -7141,8 +7142,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0",
-                    "datestamp": "1511480585",
+                    "version": "8.x-3.3",
+                    "datestamp": "1515660185",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7645,17 +7646,17 @@
         },
         {
             "name": "drupal/video_embed_field",
-            "version": "2.0.0-alpha1",
+            "version": "2.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/video_embed_field",
-                "reference": "8.x-2.0-alpha1"
+                "reference": "8.x-2.0-alpha2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-2.0-alpha1.zip",
-                "reference": "8.x-2.0-alpha1",
-                "shasum": "4ce3d9f0b01a9c9351d7eba453384ca8da6935f6"
+                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-2.0-alpha2.zip",
+                "reference": "8.x-2.0-alpha2",
+                "shasum": "45b67ad5e0092f2ec9c2873ceabc85ff3a5e9620"
             },
             "require": {
                 "drupal/core": "*"
@@ -7672,7 +7673,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x",
-                    "datestamp": "1506684843",
+                    "datestamp": "1512694688",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -7936,7 +7937,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1483529942",
+                    "datestamp": "1516322885",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9583,20 +9584,20 @@
         },
         {
             "name": "nrel/communications",
-            "version": "2.2.5.1",
+            "version": "2.2.6.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:NREL/communications.git",
-                "reference": "837a742b02e7c855333e07d18e5604c68981aa1b"
+                "reference": "604fcc65e47464ee73319e55b81cb77c4ac14c0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NREL/communications/zipball/837a742b02e7c855333e07d18e5604c68981aa1b",
-                "reference": "837a742b02e7c855333e07d18e5604c68981aa1b",
+                "url": "https://api.github.com/repos/NREL/communications/zipball/604fcc65e47464ee73319e55b81cb77c4ac14c0d",
+                "reference": "604fcc65e47464ee73319e55b81cb77c4ac14c0d",
                 "shasum": ""
             },
             "require": {
-                "acquia/lightning": "2.2.5",
+                "acquia/lightning": "2.2.6",
                 "aws/aws-sdk-php": "^3.31",
                 "behat/mink-zombie-driver": "^1.4",
                 "components/highlightjs": "9.7.*",
@@ -9705,9 +9706,9 @@
             "homepage": "https://github.com/NREL/communications",
             "support": {
                 "issues": "https://github.com/NREL/communications/issues",
-                "source": "https://github.com/NREL/communications/tree/2.2.5.1"
+                "source": "https://github.com/NREL/communications/tree/2.2.6.1"
             },
-            "time": "2018-04-05T17:13:40+00:00"
+            "time": "2018-04-05T20:23:25+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
