@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "406d3af1ee2c02f46417215a5ec8ee75",
+    "content-hash": "91cbc81ce00c84f88de8804569afa1ef",
     "packages": [
         {
             "name": "acquia/lightning",
-            "version": "2.2.6",
+            "version": "2.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/lightning.git",
-                "reference": "eab197f1b624aa3260a2b51dc45fd9d8c79cc540"
+                "reference": "bf03132e2de5e29ad2858f065974518a025a2dda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/lightning/zipball/eab197f1b624aa3260a2b51dc45fd9d8c79cc540",
-                "reference": "eab197f1b624aa3260a2b51dc45fd9d8c79cc540",
+                "url": "https://api.github.com/repos/acquia/lightning/zipball/bf03132e2de5e29ad2858f065974518a025a2dda",
+                "reference": "bf03132e2de5e29ad2858f065974518a025a2dda",
                 "shasum": ""
             },
             "require": {
@@ -28,7 +28,7 @@
                 "drupal/acquia_connector": "^1.1",
                 "drupal/config_update": "^1.5.0",
                 "drupal/contact_storage": "^1.0",
-                "drupal/core": "~8.4.3",
+                "drupal/core": "~8.4.4",
                 "drupal/crop": "2.0.0-beta1",
                 "drupal/ctools": "^3.0",
                 "drupal/diff": "^1.0",
@@ -40,7 +40,7 @@
                 "drupal/features": "^3.0",
                 "drupal/image_widget_crop": "^2.1",
                 "drupal/inline_entity_form": "^1.0",
-                "drupal/jsonapi": "^1.4.0",
+                "drupal/jsonapi": "1.10.0",
                 "drupal/media_entity": "2.0.0-alpha2",
                 "drupal/media_entity_document": "1.x-dev",
                 "drupal/media_entity_image": "1.x-dev",
@@ -65,7 +65,6 @@
                 "behat/behat": "^3.0",
                 "behat/mink": "~1.7",
                 "behat/mink-goutte-driver": "~1.2",
-                "composer/composer": "^1.4",
                 "consolidation/robo": "1.1.4",
                 "drupal/coder": "~8.2.0",
                 "drupal/console": "^1.0.0",
@@ -113,9 +112,8 @@
                         "2749503 - Add basic support for Quick Edit": "https://www.drupal.org/files/issues/workbench_moderation-quickedit-support-2749503-6.patch"
                     },
                     "drupal/core": {
-                        "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/1356276-408--8.4.3.patch",
+                        "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/1356276-408--8.4.4.patch",
                         "2880374 - Experimental modules should not have warnings after being installed": "https://www.drupal.org/files/issues/2880374-remove-experimental-warnings-6.patch",
-                        "2880445 - Config sync should not throw a warning when not being writable": "https://www.drupal.org/files/issues/2880445-remove-config-write-warning-2.patch",
                         "2869592 - Disabled update module shouldn't produce a status report warning": "https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch",
                         "2885441 - EntityReferenceAutocompleteWidget should define its size setting as an integer": "https://www.drupal.org/files/issues/2885441-2.patch",
                         "2883813 - Move File/Image media type into Standard once Media is stable": "https://www.drupal.org/files/issues/2883813-27.patch",
@@ -166,10 +164,10 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "description": "The best of Drupal, curated by Acquia",
-            "time": "2017-12-20T19:49:05+00:00"
+            "time": "2018-02-21T22:43:28+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -4604,17 +4602,17 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "1.15.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi",
-                "reference": "8.x-1.15"
+                "reference": "8.x-1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.15.zip",
-                "reference": "8.x-1.15",
-                "shasum": "6fd6f2efd1b117e21f44a8857cfca42ff460d455"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.10.zip",
+                "reference": "8.x-1.10",
+                "shasum": "27086b925e419d4f176937d727c8578cf1d122a7"
             },
             "require": {
                 "drupal/core": "^8.3"
@@ -4630,8 +4628,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.15",
-                    "datestamp": "1522558384",
+                    "version": "8.x-1.10",
+                    "datestamp": "1521653147",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9584,20 +9582,20 @@
         },
         {
             "name": "nrel/communications",
-            "version": "2.2.6.2",
+            "version": "2.2.8.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:NREL/communications.git",
-                "reference": "6038070e7197cec8749aef2eb0ce37e061584de3"
+                "reference": "042fa242b45ee6d3ba369a5b34c5a6c665169c8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NREL/communications/zipball/6038070e7197cec8749aef2eb0ce37e061584de3",
-                "reference": "6038070e7197cec8749aef2eb0ce37e061584de3",
+                "url": "https://api.github.com/repos/NREL/communications/zipball/042fa242b45ee6d3ba369a5b34c5a6c665169c8e",
+                "reference": "042fa242b45ee6d3ba369a5b34c5a6c665169c8e",
                 "shasum": ""
             },
             "require": {
-                "acquia/lightning": "2.2.6",
+                "acquia/lightning": "~2.2.0",
                 "aws/aws-sdk-php": "^3.31",
                 "behat/mink-zombie-driver": "^1.4",
                 "components/highlightjs": "9.7.*",
@@ -9706,9 +9704,9 @@
             "homepage": "https://github.com/NREL/communications",
             "support": {
                 "issues": "https://github.com/NREL/communications/issues",
-                "source": "https://github.com/NREL/communications/tree/2.2.6.2"
+                "source": "https://github.com/NREL/communications/tree/2.2.8.1"
             },
-            "time": "2018-04-11T20:42:27+00:00"
+            "time": "2018-04-11T21:20:40+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
