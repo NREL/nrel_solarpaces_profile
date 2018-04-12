@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "91cbc81ce00c84f88de8804569afa1ef",
+    "content-hash": "d21b5afdea0becc391c99f2e7630316e",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -4072,22 +4072,16 @@
         },
         {
             "name": "drupal/file_mdm",
-            "version": "1.1.0",
+            "version": "dev-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/file_mdm",
-                "reference": "8.x-1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/file_mdm-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "7f354aec6f89e3141c2aa1fb3747ad5d4578c13f"
+                "reference": "b100cdf4bee604e6973430579fee4028e4a30d88"
             },
             "require": {
                 "drupal/core": "~8.0",
                 "lsolesen/pel": "0.9.6",
-                "phenx/php-font-lib": "0.5",
+                "phenx/php-font-lib": "^0.5",
                 "php": ">=5.6"
             },
             "require-dev": {
@@ -4099,17 +4093,17 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1488273785",
+                    "version": "8.x-1.1+3-dev",
+                    "datestamp": "1505400543",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -4121,11 +4115,12 @@
             "homepage": "https://www.drupal.org/project/file_mdm",
             "support": {
                 "source": "http://cgit.drupalcode.org/file_mdm"
-            }
+            },
+            "time": "2017-09-14T14:47:13+00:00"
         },
         {
             "name": "drupal/file_mdm_exif",
-            "version": "1.1.0",
+            "version": "dev-1.x",
             "require": {
                 "drupal/core": "~8.0",
                 "drupal/file_mdm": "self.version"
@@ -4139,17 +4134,17 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1488273785",
+                    "version": "8.x-1.1+3-dev",
+                    "datestamp": "1505400543",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -9582,7 +9577,7 @@
         },
         {
             "name": "nrel/communications",
-            "version": "2.2.8.1",
+            "version": "1.0.0-rc3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:NREL/communications.git",
@@ -9849,16 +9844,16 @@
         },
         {
             "name": "phenx/php-font-lib",
-            "version": "0.5",
+            "version": "0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PhenX/php-font-lib.git",
-                "reference": "19ad2bebc35be028fcc0221025fcbf3d436a3962"
+                "reference": "760148820110a1ae0936e5cc35851e25a938bc97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/19ad2bebc35be028fcc0221025fcbf3d436a3962",
-                "reference": "19ad2bebc35be028fcc0221025fcbf3d436a3962",
+                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/760148820110a1ae0936e5cc35851e25a938bc97",
+                "reference": "760148820110a1ae0936e5cc35851e25a938bc97",
                 "shasum": ""
             },
             "require-dev": {
@@ -9882,7 +9877,7 @@
             ],
             "description": "A library to read, parse, export and make subsets of different types of font files.",
             "homepage": "https://github.com/PhenX/php-font-lib",
-            "time": "2017-02-11T10:58:43+00:00"
+            "time": "2017-09-13T16:14:37+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
