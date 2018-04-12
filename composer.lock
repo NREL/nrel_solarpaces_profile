@@ -4,38 +4,35 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b899684c8ffd450ea03eb46335052f5e",
+    "content-hash": "e267970a5414a5bc7ee741a1488aa696",
     "packages": [
         {
             "name": "acquia/lightning",
-            "version": "3.0.3",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/lightning.git",
-                "reference": "b061843d7f324161d1303298636a96d1446bfc14"
+                "reference": "a52daaa85a47ed05f54f3cc3c8bc83320302604e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/lightning/zipball/b061843d7f324161d1303298636a96d1446bfc14",
-                "reference": "b061843d7f324161d1303298636a96d1446bfc14",
+                "url": "https://api.github.com/repos/acquia/lightning/zipball/a52daaa85a47ed05f54f3cc3c8bc83320302604e",
+                "reference": "a52daaa85a47ed05f54f3cc3c8bc83320302604e",
                 "shasum": ""
             },
             "require": {
                 "cweagans/composer-patches": "^1.6.4",
                 "drupal-composer/drupal-scaffold": "^2.0.0",
-                "drupal/core": "~8.4.4",
-                "drupal/lightning_api": "^1.0.0-rc3",
-                "drupal/lightning_core": "^1.0.0-rc2",
-                "drupal/lightning_layout": "^1.0.0-rc1",
-                "drupal/lightning_media": "^1.0.0-rc3",
-                "drupal/lightning_workflow": "^1.0.0-rc2",
+                "drupal/lightning_api": "^1.0.0-rc4",
+                "drupal/lightning_core": "^1.0.0-rc4",
+                "drupal/lightning_layout": "^1.1",
+                "drupal/lightning_media": "^1.0.0-rc4",
+                "drupal/lightning_workflow": "^1.2",
                 "oomphinc/composer-installers-extender": "^1.1"
             },
             "require-dev": {
                 "acquia/lightning_dev": "dev-8.x-1.x",
-                "drupal/console": "^1.0.0",
-                "drupal/media_entity_generic": "1.x-dev",
-                "grasmash/yaml-cli": "^1.0"
+                "drupal/media_entity_generic": "1.x-dev"
             },
             "bin": [
                 "lightning-subprofile"
@@ -78,7 +75,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "The best of Drupal, curated by Acquia",
-            "time": "2018-02-28T00:05:12+00:00"
+            "time": "2018-03-28T21:24:07+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -12467,16 +12464,16 @@
         },
         {
             "name": "zendframework/zend-stdlib",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-stdlib.git",
-                "reference": "debedcfc373a293f9250cc9aa03cf121428c8e78"
+                "reference": "10ef03144902d1955f935fff5346ed52f7d99bcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/debedcfc373a293f9250cc9aa03cf121428c8e78",
-                "reference": "debedcfc373a293f9250cc9aa03cf121428c8e78",
+                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/10ef03144902d1955f935fff5346ed52f7d99bcc",
+                "reference": "10ef03144902d1955f935fff5346ed52f7d99bcc",
                 "shasum": ""
             },
             "require": {
@@ -12485,7 +12482,7 @@
             "require-dev": {
                 "athletic/athletic": "~0.1",
                 "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "^2.6.2"
+                "zendframework/zend-coding-standard": "~1.0.0"
             },
             "type": "library",
             "extra": {
@@ -12508,7 +12505,7 @@
                 "stdlib",
                 "zf2"
             ],
-            "time": "2016-09-13T14:38:50+00:00"
+            "time": "2018-04-12T16:05:42+00:00"
         }
     ],
     "packages-dev": [
@@ -12594,6 +12591,7 @@
         "drupal/conditional_fields": 15,
         "drupal/default_content": 15,
         "drupal/field_collection": 15,
+        "drupal/lightning_workflow": 15,
         "drupal/node_clone": 20,
         "drupal/redirect": 10,
         "drupal/scheduled_updates": 15,
