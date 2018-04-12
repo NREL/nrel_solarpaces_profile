@@ -19,27 +19,32 @@
   "require-dev": {
       "drupal/stage_file_proxy": "^1.0@alpha"
   },
-    "repositories": [
-        {
+    "repositories": {
+        "local": {
             "type": "composer",
             "url": "http://packagist.test"
         },
-        {
+        "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        {
+        "assets": {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        "dev": {
+            "type": "github",
+            "url": "https://github.com/acquia/lightning-dev",
+            "no-api": true
         }
-    ],
+    },
     "config": {
         "preferred-install": {
             "drupal/core": "dist"
         },
         "sort-packages": true,
         "platform": {
-            "php": "7.1.0"
+            "php": "7.2.0"
         },
         "secure-http": false
     },
@@ -72,15 +77,12 @@
   },
   "require": {
     "drupal/conditional_fields": "^1.0@alpha",
-    "drupal/config_update": "^1.5",
     "drupal/default_content": "^1.0@alpha",
     "drupal/field_collection": "^1.0@alpha",
-    "drupal/lightning_workflow": "^1.0@alpha",
     "drupal/node_clone": "1.x-dev",
     "drupal/paragraphs": "^1.1",
     "drupal/radix_layouts": "^4.0",
     "drupal/redirect": "^1.0@beta",
-    "drupal/scheduled_updates": "^1.0@alpha",
     "nrel/communications": "~3.1.0"
   }
 }
