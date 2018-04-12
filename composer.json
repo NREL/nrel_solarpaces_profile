@@ -81,6 +81,6 @@
     "drupal/radix_layouts": "^4.0",
     "drupal/redirect": "^1.0@beta",
     "drupal/scheduled_updates": "^1.0@alpha",
-    "nrel/communications": "3.0.4.1"
+    "nrel/communications": "~3.1.0"
   }
 }
