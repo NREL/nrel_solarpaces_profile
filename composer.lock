@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d21b5afdea0becc391c99f2e7630316e",
+    "content-hash": "bd6a9382f5c3412090a5b503e65da11f",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -9577,7 +9577,7 @@
         },
         {
             "name": "nrel/communications",
-            "version": "1.0.0-rc3",
+            "version": "3.0.3.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:NREL/communications.git",
