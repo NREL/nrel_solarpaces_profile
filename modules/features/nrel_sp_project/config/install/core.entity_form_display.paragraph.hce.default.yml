@@ -9,8 +9,6 @@ dependencies:
     - field.field.paragraph.hce.field_model
     - field.field.paragraph.hce.field_number_of_hces
     - paragraphs.paragraphs_type.hce
-  module:
-    - workbench_moderation
 id: paragraph.hce.default
 targetEntityType: paragraph
 bundle: hce

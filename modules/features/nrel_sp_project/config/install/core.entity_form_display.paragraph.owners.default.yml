@@ -5,8 +5,6 @@ dependencies:
     - field.field.paragraph.owners.field_owner
     - field.field.paragraph.owners.field_owner_percent
     - paragraphs.paragraphs_type.owners
-  module:
-    - workbench_moderation
 id: paragraph.owners.default
 targetEntityType: paragraph
 bundle: owners

@@ -58,10 +58,12 @@ class ProjectOverviewTable extends BlockBase {
           }
           $delimeter = '<br />';
         }
-        $build['project_overview']['#markup'] .= '<tr>
+        if (isset($owner_info) && preg_match('/\w/', $owner_info)) {
+          $build['project_overview']['#markup'] .= '<tr>
         <td width="50%" class="first-cell">Owner(s)' . ($percent ? ' (%)' : '') . ':</td>
         <td width="50%" class="last-cell">' . $owner_info . '</td>
       </tr>';
+        }
       }
       if (count($node->get('field_technology')->getValue()) > 0) {
         $technology = \Drupal\taxonomy\Entity\Term::load($node->get('field_technology')->getValue()[0]['target_id']);

@@ -7,7 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.reference_document
   module:
     - link
-    - workbench_moderation
 id: paragraph.reference_document.default
 targetEntityType: paragraph
 bundle: reference_document

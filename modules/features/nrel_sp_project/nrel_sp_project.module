@@ -295,7 +295,12 @@ function nrel_sp_project_preprocess_field(&$variables, $hook) {
     if(isset($markup_field) && isset($variables['items'][0]['content']['#markup'])) {
       if ($units = $node->get($markup_field)->getValue()) {
         if (isset($units[0]) && $units[0]['value'] != '') {
-          $variables['items'][0]['content']['#markup'] .= ' ' . $units[0]['value'];
+          if ($units[0]['value'] == 'Expected') {
+            $variables['items'][0]['content']['#markup'] .= ' (' . $units[0]['value'] . ')';
+          }
+          else {
+            $variables['items'][0]['content']['#markup'] .= ' ' . $units[0]['value'];
+          }
         }
       }
     }

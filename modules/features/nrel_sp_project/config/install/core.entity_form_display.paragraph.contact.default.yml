@@ -9,7 +9,6 @@ dependencies:
     - paragraphs.paragraphs_type.contact
   module:
     - link
-    - workbench_moderation
 id: paragraph.contact.default
 targetEntityType: paragraph
 bundle: contact

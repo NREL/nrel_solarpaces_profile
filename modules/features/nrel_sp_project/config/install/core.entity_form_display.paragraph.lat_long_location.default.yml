@@ -11,8 +11,6 @@ dependencies:
     - field.field.paragraph.lat_long_location.field_longitude_minutes
     - field.field.paragraph.lat_long_location.field_longitude_seconds
     - paragraphs.paragraphs_type.lat_long_location
-  module:
-    - workbench_moderation
 id: paragraph.lat_long_location.default
 targetEntityType: paragraph
 bundle: lat_long_location
