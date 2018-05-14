@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: deleted
-label: Deleted
-published: false
-default_revision: false

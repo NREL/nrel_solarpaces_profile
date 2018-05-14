@@ -9802,9 +9802,6 @@ header a.app-name:hover {
     text-align: left;
   }
 }
-header {
-  background-color: red;
-}
 /* General Styles */
 .main-container {
   padding: 2em 0;
@@ -9999,6 +9996,8 @@ img.img-responsive {
   header .logo {
     float: right;
     width: 360px;
+    height: 95px;
+    padding: 10px;
   }
 }
 .field--name-field-reference-doc .img-responsive {

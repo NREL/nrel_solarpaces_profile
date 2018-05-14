@@ -28,15 +28,21 @@ class ProjectOverviewTable extends BlockBase {
       $address = $node->get('field_address')->getValue();
       $countries = \Drupal\Core\Locale\CountryManager::getStandardList();
       $country = $countries[$address[0]['country_code']];
-
+      if (isset($address[0]['administrative_area']) && preg_match('/\w+/', $address[0]['administrative_area'])) {
+        $province = $address[0]['administrative_area'];
+      }
       $build['project_overview']['#markup'] = '<table>';
       $build['project_overview']['#markup'] .= '<tr>
         <td width="50%" class="first-cell">Project Name:</td>
         <td width="50%" class="last-cell">' . $node->getTitle() . ($node->get('field_short_name')->getValue() != NULL && count($node->get('field_short_name')->getValue()) > 0 ? ' (' . $node->get('field_short_name')->getValue()[0]['value'] . ')' : '') . '</td>
       </tr>';
       $build['project_overview']['#markup'] .= '<tr>
-        <td width="50%" class="first-cell">Country:</td>
-        <td width="50%" class="last-cell">' . (isset($country) ? $country->render() : '') . '</td>
+        <td width="50%" class="first-cell">Location:</td>
+        <td width="50%" class="last-cell">' .
+      (isset($country) ? $country->render() : '')
+        .
+        (isset($province) ? "<br>($province)" : '')
+        . '</td>
       </tr>';
       if (isset($address[0]['locality']) && $address[0]['locality'] <> '' && isset($address[0]['administrative_area']) && $address[0]['administrative_area'] <> '') {
         $build['project_overview']['#markup'] .= '<tr>
