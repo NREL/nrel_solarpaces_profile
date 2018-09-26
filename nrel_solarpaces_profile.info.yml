@@ -1,8 +1,9 @@
 name: 'NREL SolarPACES Profile'
+core: '8.x'
 type: profile
+base profile: communications
 description: 'NREL SolarPACES communications sub-profile.'
 version: '8.x-2.26'
-core: '8.x'
 # Optional: Declare your installation profile as a distribution
 # This will make the installer auto-select this installation profile.
 # The distribution_name property is used in the installer and other places as
@@ -10,11 +11,8 @@ core: '8.x'
 distribution:
   name: NREL SolarPACES Profile
 # Required modules
-dependencies:
+install:
   - pathauto
   - admin_toolbar_tools
 themes:
   - nrel_solarpaces_theme
-base profile:
-  name: communications
-
