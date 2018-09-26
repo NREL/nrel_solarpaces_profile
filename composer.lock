@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b84ea45c29602772eaffe7d5b0276ddf",
+    "content-hash": "4730aff956b59b45302ef0da65612f6c",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -10737,12 +10737,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:NREL/communications.git",
-                "reference": "19afe2a430465625a948d916342b869e123193d2"
+                "reference": "7883c9dd6a51e3e2af8ae155063a0c65be0ad994"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NREL/communications/zipball/19afe2a430465625a948d916342b869e123193d2",
-                "reference": "19afe2a430465625a948d916342b869e123193d2",
+                "url": "https://api.github.com/repos/NREL/communications/zipball/7883c9dd6a51e3e2af8ae155063a0c65be0ad994",
+                "reference": "7883c9dd6a51e3e2af8ae155063a0c65be0ad994",
                 "shasum": ""
             },
             "require": {
@@ -10867,9 +10867,9 @@
             "homepage": "https://github.com/NREL/communications",
             "support": {
                 "issues": "https://github.com/NREL/communications/issues",
-                "source": "https://github.com/NREL/communications/tree/3.1.x"
+                "source": "https://github.com/NREL/communications/tree/3.2.x"
             },
-            "time": "2018-09-26T19:34:07+00:00"
+            "time": "2018-09-26T20:42:58+00:00"
         },
         {
             "name": "nrel/nrel_stats",
@@ -13880,6 +13880,7 @@
         "drupal/field_collection": 15,
         "drupal/node_clone": 20,
         "drupal/redirect": 10,
+        "nrel/communications": 20,
         "drupal/stage_file_proxy": 15
     },
     "prefer-stable": true,

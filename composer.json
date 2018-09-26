@@ -83,6 +83,6 @@
     "drupal/paragraphs": "^1.1",
     "drupal/radix_layouts": "^4.0",
     "drupal/redirect": "^1.0@beta",
-    "nrel/communications": "~3.2.0"
+    "nrel/communications": "3.2.x-dev"
   }
 }
