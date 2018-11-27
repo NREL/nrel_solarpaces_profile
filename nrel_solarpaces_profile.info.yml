@@ -1,8 +1,8 @@
 name: 'NREL SolarPACES Profile'
-core: '8.x'
 type: profile
-base profile: communications
 description: 'NREL SolarPACES communications sub-profile.'
+core: '8.x'
+base profile: communications
 version: '8.x-2.26'
 # Optional: Declare your installation profile as a distribution
 # This will make the installer auto-select this installation profile.
