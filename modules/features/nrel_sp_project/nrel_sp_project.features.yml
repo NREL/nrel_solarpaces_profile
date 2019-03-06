@@ -1,8 +1,0 @@
-bundle: nrel_sp
-excluded:
-  - block.block.bootstrap_page_title
-  - block.block.bartik_main_menu
-  - block.block.bootstrap_main_menu
-  - block.block.mainnavigation
-  - block.block.main_navigation
-required: true
