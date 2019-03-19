@@ -20,17 +20,20 @@
       "drupal/stage_file_proxy": "^1.0@alpha"
   },
     "repositories": {
-        "local": {
+        "assets" : {
             "type": "composer",
-            "url": "http://packagist.test"
+            "url": "https://asset-packagist.nrel.gov/nrel/",
+            "options" : {
+                "ssl" : {
+                    "verify_peer": false,
+                    "allow_self_signed": true
+                }
+            }
         },
+        "packagist.org": false,
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        "assets": {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
         },
         "dev": {
             "type": "github",
@@ -75,14 +78,13 @@
   },
   "patches": {
   },
-  "require": {
-    "drupal/conditional_fields": "^1.0@alpha",
-    "drupal/default_content": "^1.0@alpha",
-    "drupal/field_collection": "^1.0@alpha",
-    "drupal/node_clone": "1.x-dev",
-    "drupal/paragraphs": "^1.1",
-    "drupal/radix_layouts": "^4.0",
-      "drupal/redirect": "^1.0@beta",
-      "nrel/communications": "~3.3.0"
-  }
+    "require": {
+        "drupal/conditional_fields": "^1.0@alpha",
+        "drupal/default_content": "^1.0@alpha",
+        "drupal/field_collection": "^1.0@alpha",
+        "drupal/paragraphs": "^1.1",
+        "drupal/radix_layouts": "^4.0",
+        "drupal/redirect": "^1.0@beta",
+        "nrel/communications": "~3.3.0"
+    }
 }
