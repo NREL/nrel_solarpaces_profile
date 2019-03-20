@@ -1,24 +1,21 @@
 {
-  "name": "nrel/nrel_solarpaces_profile",
-  "description": "Custom profile for the NREL SolarPaces project. Built by Fruition.net.",
-  "type": "drupal-profile",
-  "homepage": "https://fruition.net",
-  "authors": [
-    {
-      "name": "Drew Michael",
-      "email": "drew@fruition.net",
-      "role": "Maintainer"
-    }
-  ],
-  "support": {
-      "issues": "https://github.com/NREL/nrel_solarpaces_profile/issues"
-  },
-  "license": "GPL-2.0+",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "require-dev": {
-      "drupal/stage_file_proxy": "^1.0@alpha"
-  },
+    "name": "nrel/nrel_solarpaces_profile",
+    "description": "Custom profile for the NREL SolarPaces project. Built by Fruition.net.",
+    "type": "drupal-profile",
+    "homepage": "https://fruition.net",
+    "authors": [
+        {
+            "name": "Drew Michael",
+            "email": "drew@fruition.net",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/NREL/nrel_solarpaces_profile/issues"
+    },
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": {
         "assets" : {
             "type": "composer",
@@ -30,59 +27,20 @@
                 }
             }
         },
-        "packagist.org": false,
         "drupal": {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://asset-packagist.nrel.gov/drupal8/",
+            "options" : {
+                "ssl" : {
+                    "verify_peer": false,
+                    "allow_self_signed": true
+                }
+            }
         },
-        "dev": {
-            "type": "github",
-            "url": "https://github.com/acquia/lightning-dev",
-            "no-api": true
-        }
+        "packagist.org": false,
+        "packages.drupal.org": false
     },
-    "config": {
-        "preferred-install": {
-            "drupal/core": "dist"
-        },
-        "sort-packages": true,
-        "platform": {
-            "php": "7.2.0"
-        },
-        "secure-http": false
-    },
-  "extra": {
-      "installer-types": [
-          "bower-asset",
-          "npm-asset"
-      ],
-      "installer-paths": {
-          "docroot/core": [
-              "type:drupal-core"
-          ],
-          "docroot/libraries/{$name}": [
-              "type:drupal-library",
-              "type:bower-asset",
-              "type:npm-asset"
-          ],
-          "docroot/modules/contrib/{$name}": [
-              "type:drupal-module"
-          ],
-          "docroot/profiles/contrib/{$name}": [
-              "type:drupal-profile"
-          ],
-          "docroot/themes/contrib/{$name}": [
-              "type:drupal-theme"
-          ]
-      }
-  },
-  "patches": {
-  },
     "require": {
-        "drupal/default_content": "^1.0@alpha",
-        "drupal/paragraphs": "^1.1",
-        "drupal/radix_layouts": "^4.0",
-        "drupal/redirect": "^1.0@beta",
         "nrel/communications": "~3.3.0"
     }
 }
