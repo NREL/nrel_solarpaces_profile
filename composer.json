@@ -1,46 +1,81 @@
 {
-    "name": "nrel/nrel_solarpaces_profile",
-    "description": "Custom profile for the NREL SolarPaces project. Built by Fruition.net.",
-    "type": "drupal-profile",
-    "homepage": "https://fruition.net",
-    "authors": [
-        {
-            "name": "Drew Michael",
-            "email": "drew@fruition.net",
-            "role": "Maintainer"
-        }
-    ],
-    "support": {
-        "issues": "https://github.com/NREL/nrel_solarpaces_profile/issues"
-    },
-    "license": "GPL-2.0+",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": {
-        "assets" : {
-            "type": "composer",
-            "url": "https://asset-packagist.nrel.gov/nrel/",
-            "options" : {
-                "ssl" : {
-                    "verify_peer": false,
-                    "allow_self_signed": true
-                }
-            }
-        },
-        "drupal": {
-            "type": "composer",
-            "url": "https://asset-packagist.nrel.gov/drupal8/",
-            "options" : {
-                "ssl" : {
-                    "verify_peer": false,
-                    "allow_self_signed": true
-                }
-            }
-        },
-        "packagist.org": false,
-        "packages.drupal.org": false
-    },
-    "require": {
-        "nrel/communications": "~3.3.0"
+  "name": "nrel/nrel_solarpaces_profile",
+  "description": "Custom profile for the NREL SolarPaces project. Built by Fruition.net.",
+  "type": "drupal-profile",
+  "homepage": "https://fruition.net",
+  "authors": [
+    {
+      "name": "Drew Michael",
+      "email": "drew@fruition.net",
+      "role": "Maintainer"
     }
+  ],
+  "support": {
+    "issues": "https://github.com/NREL/nrel_solarpaces_profile/issues"
+  },
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": {
+    "assets" : {
+      "type": "composer",
+      "url": "https://asset-packagist.nrel.gov/nrel/",
+      "options" : {
+        "ssl" : {
+          "verify_peer": false,
+          "allow_self_signed": true
+        }
+      }
+    },
+    "drupal": {
+      "type": "composer",
+      "url": "https://asset-packagist.nrel.gov/drupal8/",
+      "options" : {
+        "ssl" : {
+          "verify_peer": false,
+          "allow_self_signed": true
+        }
+      }
+    },
+    "packagist.org": false,
+    "packages.drupal.org": false
+  },
+  "config": {
+    "preferred-install": {
+      "drupal/core": "dist"
+    },
+    "sort-packages": true,
+    "platform": {
+      "php": "7.2.0"
+    },
+    "discard-changes": true
+  },
+  "extra": {
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
+    "installer-paths": {
+      "docroot/core": [
+        "type:drupal-core"
+      ],
+      "docroot/libraries/{$name}": [
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
+      ],
+      "docroot/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "docroot/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "docroot/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ]
+    }
+  },
+  "require": {
+    "nrel/communications": "~3.3.0"
+  }
 }
