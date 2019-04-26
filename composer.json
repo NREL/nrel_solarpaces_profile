@@ -76,6 +76,6 @@
     }
   },
   "require": {
-    "nrel/communications": "~3.3.0"
+    "nrel/communications": "3.3.x-dev"
   }
 }
