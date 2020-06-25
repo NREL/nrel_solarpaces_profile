@@ -77,5 +77,11 @@
   },
   "require": {
     "nrel/communications": "3.3.x-dev"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "/bin/ln -f -s ../../../../../../../../vendor/twbs/bootstrap ./docroot/themes/contrib/thesource_bootstrap/bootstrap",
+      "/bin/ln -f -s ../../../../../../../../vendor/twbs/bootstrap ./docroot/themes/contrib/eere_app_bootstrap/bootstrap"
+    ]
   }
 }
