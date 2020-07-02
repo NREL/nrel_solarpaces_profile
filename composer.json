@@ -76,7 +76,7 @@
     }
   },
   "require": {
-    "nrel/communications": "3.3.4.x-dev"
+    "nrel/communications": "3.304.x-dev"
   },
   "scripts": {
     "post-install-cmd": [
