@@ -19,7 +19,7 @@
   "repositories": {
     "assets" : {
       "type": "composer",
-      "url": "https://asset-packagist.nrel.gov/nrel/",
+      "url": "https://asset-packagist.nrel.gov/nrel/drupal8/",
       "options" : {
         "ssl" : {
           "verify_peer": false,
@@ -38,7 +38,8 @@
       }
     },
     "packagist.org": false,
-    "packages.drupal.org": false
+    "packages.drupal.org": false,
+    "asset-packagist.org": false
   },
   "config": {
     "preferred-install": {
