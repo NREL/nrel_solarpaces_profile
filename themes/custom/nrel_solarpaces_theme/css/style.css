@@ -188,14 +188,6 @@ img.img-responsive {
   width: 50%;
 }
 /* Media Queries */
-@media (min-width: 768px) {
-  header .logo {
-    float: right;
-    width: 360px;
-    height: 95px;
-    padding: 10px;
-  }
-}
 .field--name-field-reference-doc .img-responsive {
   display: inline;
   width: auto;
